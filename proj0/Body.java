@@ -1,4 +1,3 @@
-/** source:https://sp19.datastructur.es/materials/proj/proj0/proj0 */
 public class Body {
     /** Instance variables */
     public double xxPos = 1.0;
@@ -9,7 +8,10 @@ public class Body {
     public String imgFileName = "jupiter.gif";
     public static double G = 6.67e-11;
 
-    /** First constructor. */
+    /**
+     * First constructor, which takes six arguments, initializes these fields for
+     * all new Body objects.
+     */
     public Body(double xP, double yP, double xV, double yV, double m, String img) {
         xxPos = xP;
         yyPos = yP;
@@ -93,5 +95,9 @@ public class Body {
         // Calculate new position
         this.xxPos += dt * this.xxVel;
         this.yyPos += dt * this.yyVel;
+    }
+
+    public void draw() {
+        StdDraw.picture(xxPos, yyPos, "images/" + imgFileName);
     }
 }
