@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0caed32-56e6-42d9-b1dc-09e444361a25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab/clab6/BubbleGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab/clab6/BubbleGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab/clab6/BubbleGridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab/clab6/BubbleGridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab/clab6/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab/clab6/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/Bed.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/Bed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/BnBSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/BnBSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/BnBSolverTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/BnBSolverTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/BnBSolverTimingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/BnBSolverTimingTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/HiddenComparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/HiddenComparable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab11/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab11/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/FlightSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/FlightSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/FlightSolverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/FlightSolverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/RabinKarpAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/RabinKarpAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/RabinKarpAlgorithmTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/RabinKarpAlgorithmTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab8/RollingString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab8/RollingString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/SeparableEnemySolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/SeparableEnemySolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/SeparableEnemySolverTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/SeparableEnemySolverTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/input/party1" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/input/party1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/input/party2" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/input/party2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/input/party3" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/input/party3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab9/input/party4" beforeDir="false" afterPath="$PROJECT_DIR$/../clab9/input/party4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/GuitarHeroLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/GuitarHeroLite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/GuitarPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/GuitarPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/TTFAF.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/TTFAF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/ArrayRingBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/ArrayRingBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/GuitarString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/GuitarString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/TestArrayRingBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/TestArrayRingBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/TestGuitarString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/es/datastructur/synthesizer/TestGuitarString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/InteractivePercolationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/InteractivePercolationVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/PercolationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/PercolationFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/PercolationStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/PercolationStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/PercolationVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/PercolationVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/greeting57.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/greeting57.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/heart25.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/heart25.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input1-no.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input1-no.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input10-no.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input10-no.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input2-no.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input2-no.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input50.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input8-dups.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input8-dups.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input8-no.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input8-no.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/input8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/input8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/jerry47.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/jerry47.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/michael61.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/michael61.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/sedgewick60.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/sedgewick60.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/snake1001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/snake1001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/snake101.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/snake101.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/snake13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/snake13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/snake501.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/snake501.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/wayne98.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/wayne98.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/inputFiles/wayne98b.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/inputFiles/wayne98b.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/ComplexOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/ComplexOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/HashTableDrawingUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/HashTableDrawingUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/HashTableVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/HashTableVisualizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/Hint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/Hint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/Oomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/Oomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/OomageTestUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/OomageTestUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/SimpleOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/SimpleOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/TestComplexOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/TestComplexOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/TestJankyOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/TestJankyOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/TestNiceSpreadOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/TestNiceSpreadOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw3/hw3/hash/TestSimpleOomage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw3/hw3/hash/TestSimpleOomage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/BasicPuzzle2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/BasicPuzzle2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/ElitePuzzle3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/HardPuzzle3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/words10000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/input/words10000.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/GraphBuildingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/GraphBuildingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/StreetMapGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/hw4/streetmap/StreetMapGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw4/bearmaps/proj2ab/ExtrinsicMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw4/bearmaps/proj2ab/ExtrinsicMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/HelloNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/HelloNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab11/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab11/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab11/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab11/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab11/TestSortAlgs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab11/TestSortAlgs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/DebugPractice/DebugExercise3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/DebugPractice/foods.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/DebugPractice/foods.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Intlist/IntList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/Intlist/IntList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Intlist/IntListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/Intlist/IntListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/DogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Arithmetic/Arithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Arithmetic/Arithmetic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Arithmetic/ArithmeticTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Arithmetic/ArithmeticTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Flik/Flik.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Flik/Flik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Flik/HorribleSteve.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Flik/HorribleSteve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/IntList/IntListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/IntList/IntListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/self_reflection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/self_reflection.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/Plip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/Plip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/creatures/TestPlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/creatures/TestPlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLifeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLifeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Impassible.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Impassible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/In.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Occupant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Occupant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Out.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Out.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/SampleCreature.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/SampleCreature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/StdDraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/TestHugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/TestHugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/sampleplip.world" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/strugggz.world" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/InsertInOrderSpeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/InsertInOrderSpeedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/InsertRandomSpeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/InsertRandomSpeedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/Map61B.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/Map61B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/TestBSTMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/TestBSTMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/TestBSTMapExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/TestBSTMapExtra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab7/ULLMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab7/ULLMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/InsertInOrderSpeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/InsertInOrderSpeedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/InsertRandomSpeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/InsertRandomSpeedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/Map61B.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/Map61B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/TestMyHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/TestMyHashMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/TestMyHashMapExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/TestMyHashMapExtra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab8/ULLMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab8/ULLMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/TestMyTrieSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/TestMyTrieSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/TrieSet61B.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/TrieSet61B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-sp19" beforeDir="false" afterPath="$PROJECT_DIR$/../library-sp19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/In.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/NBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/NBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/StdAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/StdAudio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/StdDraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/StdOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/StdOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestBodyConstructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestBodyConstructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestCalcDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestCalcDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestCalcForceExertedBy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestCalcForceExertedBy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestCalcForceExertedByXY.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestCalcForceExertedByXY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestCalcNetForceExertedByXY.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestCalcNetForceExertedByXY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestReadBodies.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestReadBodies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestReadRadius.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestReadRadius.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/TestUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/TestUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/3body.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/3body.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/8star-rotation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/8star-rotation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/antimatter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/antimatter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/armageddon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/armageddon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/atom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/atom.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/binary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/binary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/binaryStars.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/binaryStars.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/bowling.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/bowling.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/chaosblossom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/chaosblossom.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/dance10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/dance10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/entropy-universe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/entropy-universe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/fourellipses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/fourellipses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/galaxy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/galaxy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/hypnosis.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/hypnosis.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/illusion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/illusion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/kaleidoscope.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/kaleidoscope.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/kevin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/kevin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/massive-squirrel-battle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/massive-squirrel-battle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/planets-elliptical.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/planets-elliptical.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/planets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/planets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/planetsparty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/planetsparty.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/pluto.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/pluto.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/quad-stars.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/quad-stars.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/soap-opera.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/soap-opera.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/spiral.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/spiral.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/suninterference.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/suninterference.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/twin-binaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/twin-binaries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/uniform100.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/uniform100.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/uniform3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/uniform3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/data/uniform8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/data/uniform8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/BasicInDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/BasicInDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/BasicInDemo_input_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/BasicInDemo_input_file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/In.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/In.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/InDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/InDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/StdDraw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/StdDraw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/StdDrawDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/StdDrawDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/StdOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/StdOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/examples/StdRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/examples/StdRandom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1a/LinkedListDequeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1a/LinkedListDequeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/CharacterComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/CharacterComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/PalindromeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/PalindromeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/ArrayDequeSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/ArrayDequeSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/AssertEqualsStringDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/AssertEqualsStringDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/StudentArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/StudentArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1gold/StudentArrayDequeLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1gold/StudentArrayDequeLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/ArrayHeapMinPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/ArrayHeapMinPQTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/ExtrinsicMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/ExtrinsicMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/KDTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/KDTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/NaiveMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/NaiveMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2ab/bearmaps/PointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2ab/bearmaps/PointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/GraphBuildingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/GraphBuildingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/StreetMapGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/hw4/streetmap/StreetMapGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/ExtrinsicMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/ExtrinsicMinPQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/PointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2ab/PointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/AugmentedStreetMapGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/AugmentedStreetMapGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/MapServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/MapServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/MapServerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/MapServerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/APIRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/APIRouteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/APIRouteHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/APIRouteHandlerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/ClearRouteAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/ClearRouteAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RasterAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RasterAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RedirectAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RedirectAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RoutingAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/RoutingAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/SearchAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/server/handler/impl/SearchAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/utils/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/proj2c/utils/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestRasterAPIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestRasterAPIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/bearmaps/test/TestRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/page/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/page/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/page/scripts/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/page/scripts/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/page/styles/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/page/styles/map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/simple/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/simple/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/simple/test1234.html" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/simple/test1234.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj2c/static/simple/testTwelveImages.html" beforeDir="false" afterPath="$PROJECT_DIR$/../proj2c/static/simple/testTwelveImages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/Core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/Core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/Core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/Core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Shepherd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Shepherd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/SaveDemo/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/SaveDemo/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/SaveDemo/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/TileEngine/TERenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/TileEngine/TERenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/TileEngine/TETile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/TileEngine/TETile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/TileEngine/Tileset.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/TileEngine/Tileset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/lab12/HexWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/lab12/HexWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/lab12/RandomWorldDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/lab12/RandomWorldDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/lab12/project3prep.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/lab12/project3prep.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj3/byow/lab13/MemoryGameSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj3/byow/lab13/MemoryGameSolution.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DogTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab2setup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DogTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DogTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0caed32-56e6-42d9-b1dc-09e444361a25" name="Default Changelist" comment="" />
+      <created>1615897662702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615897662702</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
