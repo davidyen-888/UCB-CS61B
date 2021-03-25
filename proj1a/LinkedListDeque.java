@@ -10,9 +10,7 @@ public class LinkedListDeque<T> {
     private TNode sentinel; // Circular sentinel.
     private int size = 0;
 
-    /**
-     * Constructor that creates an empty LinkedListDeque.
-     */
+    /** Constructor that creates an empty LinkedListDeque. */
     public LinkedListDeque() {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
@@ -20,9 +18,7 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    /**
-     * Constructor
-     */
+    /** Constructor */
     public LinkedListDeque(T item) {
         sentinel = new TNode(null, null, null);
         sentinel.next = new TNode(item, sentinel, sentinel);
@@ -54,27 +50,19 @@ public class LinkedListDeque<T> {
         size++;
     }
 
-    /**
-     * Returns true if deque is empty, false otherwise.
-     */
+    /** Returns true if deque is empty, false otherwise. */
     public boolean isEmpty() {
         if (size == 0) {
             return true;
-        } else
-            return false;
+        } else return false;
     }
 
-    /**
-     * Returns the number of items in the deque.
-     */
+    /** Returns the number of items in the deque. */
     public int size() {
         return size;
     }
 
-    /**
-     * Prints the items in the deque from first to last, separated by a space. Once
-     * all the items have been printed, print out a new line.
-     */
+    /** Prints the items in the deque from first to last, separated by a space. Once all the items have been printed, print out a new line. */
     public void printDeque() {
         TNode pointer = sentinel;
         while (pointer.next != sentinel) { // Since pointer.item is always null, use pointer.next.
@@ -84,10 +72,7 @@ public class LinkedListDeque<T> {
         System.out.println();
     }
 
-    /**
-     * Removes and returns the item at the front of the deque. If no such item
-     * exists, returns null.
-     */
+    /** Removes and returns the item at the front of the deque. If no such item exists, returns null. */
     public T removeFirst() {
         if (sentinel.next == sentinel) {
             return null;
@@ -99,10 +84,7 @@ public class LinkedListDeque<T> {
         return removedFirst_item;
     }
 
-    /**
-     * Removes and returns the item at the back of the deque. If no such item
-     * exists, returns null.
-     */
+    /** Removes and returns the item at the back of the deque. If no such item exists, returns null. */
     public T removeLast() {
         if (sentinel.prev == sentinel) {
             return null;
@@ -137,9 +119,7 @@ public class LinkedListDeque<T> {
      *
      * @Rule: get must use recursion, not iteration.
      */
-    /**
-     * Helper method for getRecursive. This is similar to line 128~132.
-     */
+    /** Helper method for getRecursive. This is similar to line 128~132. */
     private T getRecursiveHelper(TNode pointer, int index) {
         if (index == 0) {
             return pointer.item;
