@@ -2,7 +2,7 @@
  * Linked-list based double ended queue, which accepts generic types.
  *
  * @Rule: All the method should follow "Deque API" described in
- * https://sp18.datastructur.es/materials/proj/proj1a/proj1a#the-deque-api
+ * https://sp19.datastructur.es/materials/proj/proj1a/proj1a#the-deque-api
  * @Rule: The amount of memory that this program uses at any given time must be
  * proportional to the number of items.
  */
@@ -54,7 +54,8 @@ public class LinkedListDeque<T> {
     public boolean isEmpty() {
         if (size == 0) {
             return true;
-        } else return false;
+        }
+        else return false;
     }
 
     /** Returns the number of items in the deque. */
