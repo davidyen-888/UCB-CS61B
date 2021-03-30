@@ -46,6 +46,15 @@ public class ArrayDequeTest {
         int actual19=input.get(18);
         assertEquals(10, actual0);
         assertEquals(9, actual19);
-
+    }
+    @Test
+    public void testResize(){
+        ArrayDeque<Integer> input = new ArrayDeque<>();
+        for (int i=0;i< 8;i++){
+            input.addFirst(i);
+        }
+        input.addLast(1);
+        int actual=input.size();
+        assertEquals(9, actual);
     }
 }
