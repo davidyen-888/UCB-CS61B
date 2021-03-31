@@ -3,6 +3,8 @@
  * files. Input example: java NBody 20000000 20000 ./data/planets.txt
  */
 public class NBody {
+    private static final String backgroundMusic = "./audio/2001.mid"; // background music
+
     public static double readRadius(String file) {
         In bodiesIn = new In(file);
 
@@ -63,6 +65,7 @@ public class NBody {
             String imageToDraw = "images/starfield.jpg";
             StdDraw.picture(0, 0, imageToDraw);
             // Draw all of the Bodys.
+            // @source:
             // https://blogs.oracle.com/corejavatechtips/using-enhanced-for-loops-with-your-classes
             for (Body b : bodies) {
                 b.draw();
@@ -72,6 +75,8 @@ public class NBody {
             StdDraw.pause(10);
             // Increase your time variable by dt.
             time += dt;
+            // Play the space-audio
+            StdAudio.play(backgroundMusic);
         }
         StdOut.printf("%d\n", bodies.length);
         StdOut.printf("%.2e\n", radius);
