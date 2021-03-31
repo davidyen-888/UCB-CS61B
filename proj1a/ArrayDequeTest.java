@@ -55,6 +55,8 @@ public class ArrayDequeTest {
         }
         input.addLast(1);
         int actual=input.size();
+        int actualLast=input.get(input.size()-1);
         assertEquals(9, actual);
+        assertEquals(1, actualLast);
     }
 }
