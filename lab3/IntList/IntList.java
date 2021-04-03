@@ -72,10 +72,6 @@ public class IntList {
         return new IntList(L.first * L.first, squareListRecursive(L.rest));
     }
 
-    public static IntList reverse(IntList L){
-        return null;
-    }
-
     /** DO NOT MODIFY ANYTHING ABOVE THIS LINE! */
 
 
@@ -106,7 +102,39 @@ public class IntList {
         }
         return new IntList(A.first, catenate(A.rest, B));
     }
-
+    /**
+     * Returns the reverse of the given IntList.
+     * This method is destructive. If given null as input, return null
+     * @Note Recursive.
+     */
+    public static IntList reverseRecursive(IntList L){
+        if (L==null||L.rest==null){
+            return L;
+        }
+        IntList reversed=reverseRecursive(L.rest);
+        L.rest.rest=L;
+        L.rest=null;
+        return reversed;
+    }
+    /**
+     * Returns the reverse of the given IntList.
+     * This method is destructive. If given null as input, return null
+     * @Note Iterative.
+     */
+    public static IntList reverse(IntList L){
+        if (L==null||L.rest==null){
+            return null;
+        }
+        IntList pointer=L.rest;
+        L.rest=null;    // This is the new end of the reversed L.
+        while (pointer!=null){
+            IntList nextPointer=pointer.rest;
+            pointer.rest=L; // Connects reversed linked list.
+            L=pointer;
+            pointer=nextPointer;
+        }
+        return L;
+    }
 
     /**
      * DO NOT MODIFY ANYTHING BELOW THIS LINE! Many of the concepts below here

@@ -28,16 +28,6 @@ public class IntListTest {
         assertEquals(IntList.of(1, 4, 9), L);
     }
 
-    @Test
-    public void testReverse() {
-        IntList L = IntList.of(1, 2, 3);
-        IntList reversedL = IntList.reverse(L);
-        IntList expected=IntList.of(3,2,1);
-        assertEquals(expected, reversedL);  // Tests if the function returns a reversed list.
-        assertNotEquals(L, reversedL);  // Tests if the function is destructive.
-        assertEquals(null, IntList.reverse(null));  // Tests if the method handles a null input properly.
-    }
-
     /**
      * Do not use the new keyword in your tests. You can create
      * lists using the handy IntList.of method.
@@ -75,6 +65,15 @@ public class IntListTest {
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
+    }
+    @Test
+    public void testReverse() {
+        IntList L = IntList.of(1, 2, 3);
+        IntList reversedL = IntList.reverse(L);
+        IntList expected=IntList.of(3,2,1);
+        assertEquals(expected, reversedL);  // Tests if the function returns a reversed list.
+        assertNotEquals(L, reversedL);  // Tests if the function is destructive.
+        assertEquals(null, IntList.reverse(null));  // Tests if the method handles a null input properly.
     }
 
     /** If you're running this from the command line, you'll need
