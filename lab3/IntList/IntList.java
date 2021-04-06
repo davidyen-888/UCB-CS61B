@@ -97,55 +97,47 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        if (A == null){
+        if (A == null) {
             return B;
         }
         return new IntList(A.first, catenate(A.rest, B));
     }
+
     /**
      * Returns the reverse of the given IntList.
      * This method is destructive. If given null as input, return null
+     *
      * @Note Recursive.
      */
-    public static IntList reverseRecursive(IntList L){
-        if (L==null||L.rest==null){
+    public static IntList reverseRecursive(IntList L) {
+        if (L == null || L.rest == null) {
             return L;
         }
-        IntList reversed=reverseRecursive(L.rest);
-        L.rest.rest=L;
-        L.rest=null;
+        IntList reversed = reverseRecursive(L.rest);
+        L.rest.rest = L;
+        L.rest = null;
         return reversed;
     }
+
     /**
      * Returns the reverse of the given IntList.
      * This method is destructive. If given null as input, return null
+     *
      * @Note Iterative.
      */
-    public static IntList reverse(IntList L){
-        if (L==null||L.rest==null){
+    public static IntList reverse(IntList L) {
+        if (L == null || L.rest == null) {
             return null;
         }
-        IntList pointer=L.rest;
-        L.rest=null;    // This is the new end of the reversed L.
-        while (pointer!=null){
-            IntList nextPointer=pointer.rest;
-            pointer.rest=L; // Connects reversed linked list.
-            L=pointer;
-            pointer=nextPointer;
+        IntList pointer = L.rest;
+        L.rest = null;    // This is the new end of the reversed L.
+        while (pointer != null) {
+            IntList nextPointer = pointer.rest;
+            pointer.rest = L; // Connects reversed linked list.
+            L = pointer;
+            pointer = nextPointer;
         }
         return L;
-    }
-
-    /**
-     * DO NOT MODIFY ANYTHING BELOW THIS LINE! Many of the concepts below here
-     * will be introduced later in the course or feature some form of advanced
-     * trickery which we implemented to help make your life a little easier for
-     * the lab.
-     */
-
-    @Override
-    public int hashCode() {
-        return first;
     }
 
     /**
@@ -166,6 +158,18 @@ public class IntList {
             p.rest = new IntList(args[k], null);
         }
         return result;
+    }
+
+    /**
+     * DO NOT MODIFY ANYTHING BELOW THIS LINE! Many of the concepts below here
+     * will be introduced later in the course or feature some form of advanced
+     * trickery which we implemented to help make your life a little easier for
+     * the lab.
+     */
+
+    @Override
+    public int hashCode() {
+        return first;
     }
 
     /**
