@@ -1,10 +1,15 @@
+import java.util.Iterator;
+import java.util.Set;
+import java.util.HashSet;
+
+
 public class ArraySet<T> {
     private T[] items;
     private int size;
 
-    /** Constructor for Arrayset */
+    /** Constructor for ArraySet */
     public ArraySet() {
-        items = new Object[100];
+        items = (T[]) new Object[100];
         size = 0;
     }
 
@@ -25,6 +30,9 @@ public class ArraySet<T> {
      * IllegalArgumentException if the key is null.
      */
     public void add(T x) {
+        if (x == null) {
+            throw new IllegalArgumentException("Can't add null");
+        }
         // With only one copy in set.
         if (contains(x)) {
             return;
@@ -38,7 +46,55 @@ public class ArraySet<T> {
         return size;
     }
 
+    /** Returns an iterator (a.k.a. seer) into ME. */
+    public Iterator<T> iterator() {
+        return new ArraySetIterator();
+    }
+    private class ArraySetIterator implements Iterator<T>{
+        private int WizardPosition;
+        public ArraySetIterator(){
+            WizardPosition=0;
+        }
+        public boolean hasNext() {
+            return WizardPosition<size;
+        }
+
+        public T next() {
+            T returnItem=items[WizardPosition];
+            WizardPosition++;
+            return returnItem;
+        }
+    }
+
     public static void main(String[] args) {
+        Set<Integer> javaset = new HashSet<>();
+        javaset.add(5);
+        javaset.add(23);
+        javaset.add(42);
+        /**
+         for (int i : javaset) {
+         System.out.println(i);
+         }
+         */
+        Iterator<Integer> seer = javaset.iterator();
+        while (seer.hasNext()) {
+            System.out.println(seer.next());
+        }
+
+        ArraySet<Integer> aset = new ArraySet<>();
+        aset.add(5);
+        aset.add(23);
+        aset.add(42);
+        /**
+         for (int i : aset) {
+         System.out.println(i);
+         }
+         */
+        Iterator<Integer> aseer = aset.iterator();
+        while (aseer.hasNext()) {
+            System.out.println(aseer.next());
+        }
+
         ArraySet<String> s = new ArraySet<>();
         s.add(null);
         s.add("horse");
