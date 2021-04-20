@@ -3,7 +3,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 
-public class ArraySet<T> implements Iterable<T>{
+public class ArraySet<T> implements Iterable<T> {
     private T[] items;
     private int size;
 
@@ -50,31 +50,35 @@ public class ArraySet<T> implements Iterable<T>{
     public Iterator<T> iterator() {
         return new ArraySetIterator();
     }
-    private class ArraySetIterator implements Iterator<T>{
+
+    private class ArraySetIterator implements Iterator<T> {
         private int WizardPosition;
-        public ArraySetIterator(){
-            WizardPosition=0;
+
+        public ArraySetIterator() {
+            WizardPosition = 0;
         }
+
         public boolean hasNext() {
-            return WizardPosition<size;
+            return WizardPosition < size;
         }
 
         public T next() {
-            T returnItem=items[WizardPosition];
+            T returnItem = items[WizardPosition];
             WizardPosition++;
             return returnItem;
         }
     }
+
     @Override
-    public String toString(){
-        String returnString ="{";
-        for (int i=0;i<size-1;i++){
-            returnString+= items[i].toString();
-            returnString+=", ";
+    public String toString() {
+        StringBuilder returnStringBuilder = new StringBuilder("{");
+        for (int i = 0; i < size - 1; i++) {
+            returnStringBuilder.append(items[i].toString());
+            returnStringBuilder.append(", ");
         }
-        returnString+=items[size-1];
-        returnString+="}";
-        return returnString;
+        returnStringBuilder.append(items[size - 1]);
+        returnStringBuilder.append("}");
+        return returnStringBuilder.toString();
     }
 
     public static void main(String[] args) {
