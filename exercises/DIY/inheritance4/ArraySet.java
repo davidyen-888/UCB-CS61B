@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 
 public class ArraySet<T> implements Iterable<T> {
@@ -67,7 +69,7 @@ public class ArraySet<T> implements Iterable<T> {
         }
     }
 
-    @Override
+    /*@Override
     public String toString() {
         StringBuilder returnStringBuilder = new StringBuilder("{");
         for (int i = 0; i < size - 1; i++) {
@@ -77,11 +79,19 @@ public class ArraySet<T> implements Iterable<T> {
         returnStringBuilder.append(items[size - 1]);
         returnStringBuilder.append("}");
         return returnStringBuilder.toString();
+    }*/
+    @Override
+    public String toString() {
+        List<String> listOfItems = new ArrayList<>();
+        for (T x : this) {
+            listOfItems.add(x.toString());
+        }
+        return "{" + String.join(", ", listOfItems) + "}";
     }
 
     @Override
     public boolean equals(Object other) {
-        if (other==this){
+        if (other == this) {
             return true;    // Optimization
         }
         if (other == null) {
@@ -124,16 +134,16 @@ public class ArraySet<T> implements Iterable<T> {
         for (int i : aset) {
             System.out.println(i);
         }
-        /**
-         ArraySet<String> s = new ArraySet<>();
-         s.add(null);
-         s.add("horse");
-         s.add("fish");
-         s.add("house");
-         s.add("fish");
-         System.out.println(s.contains("horse"));
-         System.out.println(s.size());
-         */
+
+        /*ArraySet<String> s = new ArraySet<>();
+        s.add(null);
+        s.add("horse");
+        s.add("fish");
+        s.add("house");
+        s.add("fish");
+        System.out.println(s.contains("horse"));
+        System.out.println(s.size());*/
+
     }
 
     /*
