@@ -25,10 +25,17 @@ public class Palindrome {
         }
     }
 
-    /** Returns true if the given String is a palindrome, and false otherwise */
+    /** Returns true if the given String is a palindrome, and false otherwise. */
     public boolean isPalindrome(String word) {
         Deque<Character> deque = wordToDeque(word);
         return isPalindromeHelper(deque);
     }
 
+    /**
+     * Returns true if the word is a palindrome according to the character
+     * comparison test provided by the CharacterComparator passed in as argument cc.
+     */
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+
+    }
 }
