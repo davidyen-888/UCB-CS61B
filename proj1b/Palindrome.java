@@ -36,6 +36,6 @@ public class Palindrome {
      * comparison test provided by the CharacterComparator passed in as argument cc.
      */
     public boolean isPalindrome(String word, CharacterComparator cc) {
-
+        return true;
     }
 }
