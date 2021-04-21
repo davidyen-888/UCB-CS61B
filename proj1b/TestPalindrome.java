@@ -15,4 +15,19 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
+    @Test
+    public void testIsPalindrome(){
+        String s0="";
+        String s1="a";
+        String sEvenTrue="noon";
+        String sEvenFalse="tree";
+        String sOddTrue="racecar";
+        String sOddFalse="horse";
+        assertTrue(palindrome.isPalindrome(s0));
+        assertTrue(palindrome.isPalindrome(s1));
+        assertTrue(palindrome.isPalindrome(sEvenTrue));
+        assertFalse(palindrome.isPalindrome(sEvenFalse));
+        assertTrue(palindrome.isPalindrome(sOddTrue));
+        assertFalse(palindrome.isPalindrome(sOddFalse));
+    }
 }
