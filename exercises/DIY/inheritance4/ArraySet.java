@@ -1,11 +1,9 @@
 import java.util.Iterator;
-import java.util.Set;
-import java.util.HashSet;
 
 
 public class ArraySet<T> implements Iterable<T> {
     private T[] items;
-    private int size;
+    private int size;   // The next item to be added will be at position size.
 
     /** Constructor for ArraySet */
     public ArraySet() {
@@ -81,13 +79,42 @@ public class ArraySet<T> implements Iterable<T> {
         return returnStringBuilder.toString();
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (other==this){
+            return true;    // Optimization
+        }
+        if (other == null) {
+            return false;
+        }
+        if (other.getClass() != this.getClass()) {
+            return false;
+        }
+        ArraySet<T> o = (ArraySet<T>) other;
+        if (o.size != this.size()) {
+            return false;
+        }
+        for (T item : this) {
+            if (!o.contains(item)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         ArraySet<Integer> aset = new ArraySet<>();
         aset.add(5);
         aset.add(23);
         aset.add(42);
-
         System.out.println(aset);
+
+        ArraySet<Integer> aset2 = new ArraySet<>();
+        aset2.add(5);
+        aset2.add(23);
+        aset2.add(42);
+        System.out.println(aset.equals(aset2)); //true
+        System.out.println(aset.equals("fish"));  //false
 
         Iterator<Integer> aseer = aset.iterator();
         while (aseer.hasNext()) {
@@ -97,16 +124,16 @@ public class ArraySet<T> implements Iterable<T> {
         for (int i : aset) {
             System.out.println(i);
         }
-
-
-        ArraySet<String> s = new ArraySet<>();
-        s.add(null);
-        s.add("horse");
-        s.add("fish");
-        s.add("house");
-        s.add("fish");
-        System.out.println(s.contains("horse"));
-        System.out.println(s.size());
+        /**
+         ArraySet<String> s = new ArraySet<>();
+         s.add(null);
+         s.add("horse");
+         s.add("fish");
+         s.add("house");
+         s.add("fish");
+         System.out.println(s.contains("horse"));
+         System.out.println(s.size());
+         */
     }
 
     /*
