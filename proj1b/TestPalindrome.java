@@ -30,4 +30,20 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome(sOddTrue));
         assertFalse(palindrome.isPalindrome(sOddFalse));
     }
+    static CharacterComparator offByOne=new OffByOne();
+    @Test
+    public void testIsPalindromeOffByOne(){
+        String s0="";
+        String s1="a";
+        String sEvenTrue="acdb";
+        String sEvenFalse="abcd";
+        String sOddTrue="flake";
+        String sOddFalse="faake";
+        assertTrue(palindrome.isPalindrome(s0, offByOne));
+        assertTrue(palindrome.isPalindrome(s1, offByOne));
+        assertTrue(palindrome.isPalindrome(sEvenTrue, offByOne));
+        assertFalse(palindrome.isPalindrome(sEvenFalse, offByOne));
+        assertTrue(palindrome.isPalindrome(sOddTrue, offByOne));
+        assertFalse(palindrome.isPalindrome(sOddFalse, offByOne));
+    }
 }

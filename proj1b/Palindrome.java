@@ -31,11 +31,25 @@ public class Palindrome {
         return isPalindromeHelper(deque);
     }
 
+    private boolean isPalindromeHelper(Deque<Character> deque, CharacterComparator cc) {
+        if (deque.size() == 0 || deque.size() == 1) {
+            return true;
+        } else {
+            Character first = deque.removeFirst();
+            Character last = deque.removeLast();
+            if (cc.equalChars(first, last)) {
+                return isPalindromeHelper(deque, cc);
+            } else {
+                return false;
+            }
+        }
+    }
     /**
      * Returns true if the word is a palindrome according to the character
      * comparison test provided by the CharacterComparator passed in as argument cc.
      */
     public boolean isPalindrome(String word, CharacterComparator cc) {
-        return true;
+        Deque<Character> deque = wordToDeque(word);
+        return isPalindromeHelper(deque, cc);
     }
 }
