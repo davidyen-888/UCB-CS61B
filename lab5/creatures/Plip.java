@@ -1,11 +1,11 @@
 package creatures;
 
+import huglife.Action;
 import huglife.Creature;
 import huglife.Direction;
-import huglife.Action;
 import huglife.Occupant;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
@@ -57,8 +57,11 @@ public class Plip extends Creature {
      * that you get this exactly correct.
      */
     public Color color() {
-        g = 63;
-        return color(r, g, b);
+        int e = (int) Math.round(this.energy);  // 0<energy<2, 63<=g<=255
+        g = 96 * e + 63;
+        int red=99;
+        int blue=76;
+        return color(red, g, blue);
     }
 
     /**
@@ -75,6 +78,10 @@ public class Plip extends Creature {
      */
     public void move() {
         // TODO
+        this.energy -= 0.15;
+        if (this.energy < 0) {
+            this.energy = 0;
+        }
     }
 
 
@@ -83,6 +90,10 @@ public class Plip extends Creature {
      */
     public void stay() {
         // TODO
+        this.energy += 0.2;
+        if (this.energy > 2) {
+            this.energy = 2;
+        }
     }
 
     /**
