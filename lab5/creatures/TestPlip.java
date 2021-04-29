@@ -1,16 +1,17 @@
 package creatures;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.HashMap;
-import java.awt.Color;
-import huglife.Direction;
-import huglife.Action;
-import huglife.Occupant;
-import huglife.Impassible;
-import huglife.Empty;
 
-/** Tests the plip class
- *  @authr FIXME
+import huglife.*;
+import org.junit.Test;
+
+import java.awt.*;
+import java.util.HashMap;
+
+import static org.junit.Assert.*;
+
+/**
+ * Tests the plip class
+ *
+ * @author David Hsieh
  */
 
 public class TestPlip {
@@ -33,6 +34,12 @@ public class TestPlip {
     @Test
     public void testReplicate() {
         // TODO
+        Plip p = new Plip(2);
+        assertEquals(2, p.energy(), 0.01);
+        Plip babyp = p.replicate();
+        assertEquals(1, p.energy(), 0.01);
+        assertEquals(1, babyp.energy(), 0.01);
+        assertFalse(p.equals(babyp));   //Check if they are same object or not.
     }
 
     //@Test
