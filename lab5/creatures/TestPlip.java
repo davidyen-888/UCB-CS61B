@@ -42,7 +42,7 @@ public class TestPlip {
         assertFalse(p.equals(babyp));   //Check if they are same object or not.
     }
 
-    //@Test
+    @Test
     public void testChoose() {
 
         // No empty adjacent spaces; stay.

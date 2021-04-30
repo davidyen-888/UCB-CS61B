@@ -10,6 +10,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
 
+import static huglife.HugLifeUtils.randomEntry;
+
 /**
  * An implementation of a motile pacifist photosynthesizer.
  *
@@ -59,8 +61,8 @@ public class Plip extends Creature {
     public Color color() {
         int e = (int) Math.round(this.energy);  // 0<energy<2, 63<=g<=255
         g = 96 * e + 63;
-        int red=99;
-        int blue=76;
+        int red = 99;
+        int blue = 76;
         return color(red, g, blue);
     }
 
@@ -78,9 +80,9 @@ public class Plip extends Creature {
      */
     public void move() {
         // TODO
-        this.energy -= 0.15;
-        if (this.energy < 0) {
-            this.energy = 0;
+        energy -= 0.15;
+        if (energy < 0) {
+            energy = 0;
         }
     }
 
@@ -90,9 +92,9 @@ public class Plip extends Creature {
      */
     public void stay() {
         // TODO
-        this.energy += 0.2;
-        if (this.energy > 2) {
-            this.energy = 2;
+        energy += 0.2;
+        if (energy > 2) {
+            energy = 2;
         }
     }
 
@@ -102,8 +104,8 @@ public class Plip extends Creature {
      * Plip.
      */
     public Plip replicate() {
-        energy=energy*0.5;
-        double babyEnergy=energy;
+        energy = energy * 0.5;
+        double babyEnergy = energy;
         return new Plip(babyEnergy);
     }
 
@@ -125,17 +127,29 @@ public class Plip extends Creature {
         Deque<Direction> emptyNeighbors = new ArrayDeque<>();
         boolean anyClorus = false;
         // TODO
-        // (Google: Enhanced for-loop over keys of NEIGHBORS?)
-        // for () {...}
-
-        if (false) { // FIXME
-            // TODO
+        // (Google: Enhanced for-loop over keys of NEIGHBORS?) @Source: https://stackoverflow.com/questions/27867598/java-hashmap-put-in-an-enhanced-for-loop-just-like-an-arraylist
+        for (Map.Entry<Direction, Occupant> entry : neighbors.entrySet()) {
+            String value = entry.getValue().name();
+            if (value.equals("empty")) {
+                emptyNeighbors.addLast(entry.getKey());
+            } else if (value.equals("clorus")) {
+                anyClorus = true;
+            }
+        }
+        if (emptyNeighbors.isEmpty()) {
+            return new Action(Action.ActionType.STAY);
         }
 
         // Rule 2
-        // HINT: randomEntry(emptyNeighbors)
-
+        // HINT: randomEntry(emptyNeighbors), imported from HuglifeUtils.
+        if (energy >= 1) {
+            // REPLICATE towards an empty direction chosen at random.
+            return new Action(Action.ActionType.REPLICATE, randomEntry(emptyNeighbors));
+        }
         // Rule 3
+        if (anyClorus && Math.random() < 0.5) {
+            return new Action(Action.ActionType.MOVE, randomEntry(emptyNeighbors));
+        }
 
         // Rule 4
         return new Action(Action.ActionType.STAY);
