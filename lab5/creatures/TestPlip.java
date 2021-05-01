@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Tests the plip class
  *
- * @author David Hsieh
+ * @author davidhsieh
  */
 
 public class TestPlip {
