@@ -44,7 +44,7 @@ public class TestClorus {
     @Test
     public void testChoose() {
         // TODO
-        // No empty adjacent spaces; stay.
+        // 1. No empty adjacent spaces; stay.
         Clorus c = new Clorus(1.2);
         HashMap<Direction, Occupant> surrounded = new HashMap<Direction, Occupant>();
         surrounded.put(Direction.TOP, new Impassible());
@@ -57,7 +57,7 @@ public class TestClorus {
 
         assertEquals(expected, actual);
 
-        // Any Plips are seen, the Clorus will ATTACK one of them randomly.
+        // 2. Any Plips are seen, the Clorus will ATTACK one of them randomly.
         c = new Clorus(1.2);
         HashMap<Direction, Occupant> topPlip = new HashMap<Direction, Occupant>();
         topPlip.put(Direction.TOP, new Plip());
@@ -70,13 +70,21 @@ public class TestClorus {
 
         assertEquals(expected, actual);
 
-        // Energy >= 1, it will REPLICATE to a random empty square.
+        // 3. Energy >= 1, it will REPLICATE to a random empty square.
         c = new Clorus(1.2);
         HashMap<Direction, Occupant> topEmpty = new HashMap<Direction, Occupant>();
         topEmpty.put(Direction.TOP, new Empty());
         topEmpty.put(Direction.BOTTOM, new Impassible());
         topEmpty.put(Direction.LEFT, new Impassible());
         topEmpty.put(Direction.RIGHT, new Impassible());
+
+        actual = c.chooseAction(topEmpty);
+        expected = new Action(Action.ActionType.REPLICATE, Direction.TOP);
+
+        assertEquals(expected, actual);
+
+        // 4. Otherwise, the Clorus will MOVE to a random empty square.
+        c = new Clorus(1.2);
 
         actual = c.chooseAction(topEmpty);
         expected = new Action(Action.ActionType.REPLICATE, Direction.TOP);
