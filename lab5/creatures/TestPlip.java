@@ -96,15 +96,6 @@ public class TestPlip {
         assertEquals(expected, actual);
 
 
-        // Energy < 1; stay.
-        p = new Plip(.99);
-
-        actual = p.chooseAction(topEmpty);
-        expected = new Action(Action.ActionType.STAY);
-
-        assertEquals(expected, actual);
-
-
         // We don't have Cloruses yet, so we can't test behavior for when they are nearby right now.
     }
 }

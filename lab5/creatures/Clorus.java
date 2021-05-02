@@ -36,9 +36,9 @@ public class Clorus extends Creature {
      */
     public Clorus(double e) {
         super("clorus");
-        r = 0;
+        r = 34;
         g = 0;
-        b = 0;
+        b = 231;
         energy = e;
     }
 
@@ -51,23 +51,20 @@ public class Clorus extends Creature {
 
     /** Always returns the color red = 34, green = 0, blue = 231. */
     public Color color() {
-        int red = 34;
-        int green = 0;
-        int blue = 231;
-        return color(red, green, blue);
+        return color(r, g, b);
     }
 
     /** Cloruses should lose 0.03 units of energy on a MOVE action. */
     public void move() {
         energy -= 0.03;
-        if (energy < 0) {
-            energy = 0;
-        }
     }
 
     /** Cloruses should lose 0.01 units of energy on a STAY action. */
     public void stay() {
         energy -= 0.01;
+        if (energy < 0) {
+            energy = 0;
+        }
     }
 
     /**

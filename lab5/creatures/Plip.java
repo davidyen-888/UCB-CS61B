@@ -37,9 +37,9 @@ public class Plip extends Creature {
      */
     public Plip(double e) {
         super("plip");
-        r = 0;
+        r = 99;
         g = 0;
-        b = 0;
+        b = 76;
         energy = e;
     }
 
@@ -59,11 +59,9 @@ public class Plip extends Creature {
      * that you get this exactly correct.
      */
     public Color color() {
-        int e = (int) Math.round(this.energy);  // 0<energy<2, 63<=g<=255
+        int e = (int) Math.round(energy);  // 0<energy<2, 63<=g<=255
         g = 96 * e + 63;
-        int red = 99;
-        int blue = 76;
-        return color(red, g, blue);
+        return color(r, g, b);
     }
 
     /**
