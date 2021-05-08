@@ -1,15 +1,15 @@
 package es.datastructur.synthesizer;
 
-import java.util.Iterator;
-
 //TODO: Make sure to that this class and all of its methods are public
 //TODO: Make sure to add the override tag for all overridden methods
 //TODO: Make sure to make this class implement BoundedQueue<T>
 
+import java.util.Iterator;
+
 public class ArrayRingBuffer<T> implements BoundedQueue<T> {
-    /* Index for the next dequeue or peek. */
+    /* Index for the next dequeue or peek. Stores the index of the least recently inserted item. */
     private int first;
-    /* Index for the next enqueue. */
+    /* Index for the next enqueue. Stores the index one beyond the most recently inserted item. */
     private int last;
     /* Variable for the fillCount. */
     private int fillCount;
@@ -22,7 +22,18 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     public ArrayRingBuffer(int capacity) {
         // TODO: Create new array with capacity elements.
         //       first, last, and fillCount should all be set to 0.
+        rb=(T[]) new Object[capacity];
+        first=0;
+        last=0;
+        fillCount=0;
+    }
 
+    /** Helper method to increase first or last by one. */
+    private int onePlus(int index) {
+        if (index == capacity()) {
+            return 0;
+        }
+        return index + 1;
     }
 
     /**
@@ -33,7 +44,12 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     public void enqueue(T x) {
         // TODO: Enqueue the item. Don't forget to increase fillCount and update
         //       last.
-        return;
+        if (isFull()) {
+            throw new RuntimeException("Ring buffer overflow");
+        }
+        rb[last] = x;
+        last = onePlus(last);
+        fillCount++;
     }
 
     /**
@@ -44,7 +60,14 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     public T dequeue() {
         // TODO: Dequeue the first item. Don't forget to decrease fillCount and
         //       update first.
-        return null;
+        if (isEmpty()) {
+            throw new RuntimeException("Ring buffer underflow");
+        }
+        T item = rb[first];
+        rb[first] = null;
+        first = onePlus(first);
+        fillCount--;
+        return item;
     }
 
     /**
@@ -55,6 +78,24 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     public T peek() {
         // TODO: Return the first item. None of your instance variables should
         //       change.
+        if (isEmpty()) {
+            throw new RuntimeException("Ring buffer underflow");
+        }
+        T item = rb[first];
+        return item;
+    }
+    @Override
+    public int capacity(){
+        return rb.length;
+    }
+
+    @Override
+    public int fillCount(){
+        return fillCount;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
         return null;
     }
 
