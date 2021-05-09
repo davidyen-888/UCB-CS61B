@@ -30,7 +30,7 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
 
     /** Helper method to increase first or last by one. */
     private int onePlus(int index) {
-        if (index > capacity() - 1) {
+        if (index == capacity() - 1) {
             return 0;
         }
         return index + 1;

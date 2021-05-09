@@ -2,8 +2,10 @@ package es.datastructur.synthesizer;
 
 //Note: This file will not compile until you complete task 1 (BoundedQueue).
 public class GuitarString {
-    /** Constants. Do not change. In case you're curious, the keyword final
-     * means the values cannot be changed at runtime. */
+    /**
+     * Constants. Do not change. In case you're curious, the keyword final
+     * means the values cannot be changed at runtime.
+     */
     private static final int SR = 44100;      // Sampling Rate
     private static final double DECAY = .996; // energy decay factor
 
@@ -16,8 +18,8 @@ public class GuitarString {
         //       cast the result of this division operation into an int. For
         //       better accuracy, use the Math.round() function before casting.
         //       Your buffer should be initially filled with zeros.
-        buffer=new ArrayRingBuffer<>((int)Math.round(SR/frequency));
-        for (int i=0;i< buffer.capacity();i++){
+        buffer = new ArrayRingBuffer<>((int) Math.round(SR / frequency));
+        for (int i = 0; i < buffer.capacity(); i++) {
             buffer.enqueue(0.0);
         }
     }
@@ -32,7 +34,7 @@ public class GuitarString {
         //       Make sure that your random numbers are different from each
         //       other.
         Double r = Math.random() - 0.5;
-        for (int i=0;i< buffer.capacity();i++){
+        for (int i = 0; i < buffer.capacity(); i++) {
             buffer.dequeue();
             buffer.enqueue(r);
         }
@@ -45,12 +47,13 @@ public class GuitarString {
         // TODO: Dequeue the front sample and enqueue a new sample that is
         //       the average of the two multiplied by the DECAY factor.
         //       Do not call StdAudio.play().
+        double result = DECAY * 0.5 * (buffer.dequeue() + buffer.peek());
+        buffer.enqueue(result);
     }
 
     /* Return the double at the front of the buffer. */
     public double sample() {
         // TODO: Return the correct thing.
-        return 0;
+        return buffer.peek();
     }
 }
-    // TODO: Remove all comments that say TODO when you're done.
