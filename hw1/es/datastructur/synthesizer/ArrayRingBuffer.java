@@ -22,15 +22,15 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     public ArrayRingBuffer(int capacity) {
         // TODO: Create new array with capacity elements.
         //       first, last, and fillCount should all be set to 0.
-        rb=(T[]) new Object[capacity];
-        first=0;
-        last=0;
-        fillCount=0;
+        rb = (T[]) new Object[capacity];
+        first = 0;
+        last = 0;
+        fillCount = 0;
     }
 
     /** Helper method to increase first or last by one. */
     private int onePlus(int index) {
-        if (index == capacity()) {
+        if (index > capacity() - 1) {
             return 0;
         }
         return index + 1;
@@ -63,11 +63,11 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
         if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
         }
-        T item = rb[first];
+        T returnItem = rb[first];
         rb[first] = null;
         first = onePlus(first);
         fillCount--;
-        return item;
+        return returnItem;
     }
 
     /**
@@ -81,16 +81,16 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
         if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
         }
-        T item = rb[first];
-        return item;
+        return rb[first];
     }
+
     @Override
-    public int capacity(){
+    public int capacity() {
         return rb.length;
     }
 
     @Override
-    public int fillCount(){
+    public int fillCount() {
         return fillCount;
     }
 
