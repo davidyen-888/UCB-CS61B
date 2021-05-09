@@ -16,6 +16,10 @@ public class GuitarString {
         //       cast the result of this division operation into an int. For
         //       better accuracy, use the Math.round() function before casting.
         //       Your buffer should be initially filled with zeros.
+        buffer=new ArrayRingBuffer<>((int)Math.round(SR/frequency));
+        for (int i=0;i< buffer.capacity();i++){
+            buffer.enqueue(0.0);
+        }
     }
 
 
@@ -27,6 +31,11 @@ public class GuitarString {
         //
         //       Make sure that your random numbers are different from each
         //       other.
+        Double r = Math.random() - 0.5;
+        for (int i=0;i< buffer.capacity();i++){
+            buffer.dequeue();
+            buffer.enqueue(r);
+        }
     }
 
     /* Advance the simulation one time step by performing one iteration of
