@@ -33,9 +33,9 @@ public class GuitarString {
         //
         //       Make sure that your random numbers are different from each
         //       other.
-        Double r = Math.random() - 0.5;
         for (int i = 0; i < buffer.capacity(); i++) {
             buffer.dequeue();
+            Double r = Math.random() - 0.5;
             buffer.enqueue(r);
         }
     }
@@ -47,7 +47,7 @@ public class GuitarString {
         // TODO: Dequeue the front sample and enqueue a new sample that is
         //       the average of the two multiplied by the DECAY factor.
         //       Do not call StdAudio.play().
-        double result = DECAY * 0.5 * (buffer.dequeue() + buffer.peek());
+        double result = DECAY * (buffer.dequeue() + buffer.peek()) / 2;
         buffer.enqueue(result);
     }
 

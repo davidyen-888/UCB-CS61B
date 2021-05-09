@@ -12,6 +12,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class TTFAF {
     public static void main(String[] args) {
+        /**
         try {
             InputStream source = new ByteArrayInputStream(Base64.getDecoder().decode(TTFAF));
             source = new GZIPInputStream(source);
@@ -19,11 +20,14 @@ public class TTFAF {
             player.play();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // You can also do this:
-        // GuitarPlayer player = new GuitarPlayer(new java.io.File("path/to/music.mid"));
-        // player.play();
+        GuitarPlayer Demons = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/Demons.mid"));
+        GuitarPlayer Believer = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/Believer.mid"));
+        GuitarPlayer LoveMeLikeYouDo = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/LoveMeLikeYouDo.mid"));
+        GuitarPlayer SummerNightBreeze = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/SummerNightBreeze.mid"));
+        Believer.play();
     }
 
     private static final String TTFAF =
