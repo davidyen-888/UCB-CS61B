@@ -5,6 +5,7 @@ package es.datastructur.synthesizer;
 //TODO: Make sure to make this class implement BoundedQueue<T>
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     /* Index for the next dequeue or peek. Stores the index of the least recently inserted item. */
@@ -94,12 +95,47 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
         return fillCount;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
-
     // TODO: When you get to part 4, implement the needed code to support
     //       iteration and equals.
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ArrayRingBufferIterator();
+    }
+
+    @Override
+    /** Returns true only if the other object is an ArrayRingBuffer with the exact same values. */
+    public boolean equals(Object o) {
+        ArrayRingBuffer other = (ArrayRingBuffer) o;
+        if (this.fillCount != other.fillCount()) {
+            return false;
+        }
+        Iterator iter1 = this.iterator();
+        Iterator iter2 = other.iterator();
+        while (iter1.hasNext()) {
+            if (!String.valueOf(iter1.next()).equals(String.valueOf(iter2.next()))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private class ArrayRingBufferIterator<T> implements Iterator<T> {
+        /** Return whether it can be iterated. */
+        @Override
+        public boolean hasNext() {
+            return fillCount != 0;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            T returnItem = (T) rb[first];
+            first = onePlus(first);
+            fillCount--;
+            return returnItem;
+        }
+    }
 }
-// TODO: Remove all comments that say TODO when you're done.

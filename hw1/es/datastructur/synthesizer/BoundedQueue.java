@@ -1,4 +1,5 @@
 package es.datastructur.synthesizer;
+import java.util.Iterator;
 
 /**
  * The BoundedQueue is similar to our Deque from Project 1, but with a more limited API.
@@ -39,4 +40,7 @@ public interface BoundedQueue<T> extends Iterable<T> {
             return false;
         }
     }
+    /* Return the iterator of the queue */
+    @Override
+    Iterator<T> iterator();
 }

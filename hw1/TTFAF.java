@@ -1,8 +1,4 @@
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Base64;
-import java.util.zip.GZIPInputStream;
+
 
 /**
  * This code does some stuff. Run it (with sound on!) to find out what stuff it does!
@@ -23,11 +19,10 @@ public class TTFAF {
         }*/
 
         // You can also do this:
-        GuitarPlayer Demons = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/Demons.mid"));
-        GuitarPlayer Believer = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/Believer.mid"));
-        GuitarPlayer LoveMeLikeYouDo = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/LoveMeLikeYouDo.mid"));
-        GuitarPlayer SummerNightBreeze = new GuitarPlayer(new java.io.File("E:/My Drive/Work/UCB_cs61b/hw1/audio/SummerNightBreeze.mid"));
-        Believer.play();
+        GuitarPlayer Demons = new GuitarPlayer(new java.io.File("/Volumes/GoogleDrive/My Drive/Work/UCB_cs61b/hw1/audio/Demons.mid"));
+        GuitarPlayer LoveMeLikeYouDo = new GuitarPlayer(new java.io.File("/Volumes/GoogleDrive/My Drive/Work/UCB_cs61b/hw1/audio/LoveMeLikeYouDo.mid"));
+        GuitarPlayer FreeBird = new GuitarPlayer(new java.io.File("/Volumes/GoogleDrive/My Drive/Work/UCB_cs61b/hw1/audio/FreeBird.mid"));
+        FreeBird.play();
     }
 
     private static final String TTFAF =
