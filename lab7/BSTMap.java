@@ -32,6 +32,10 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         return get(key) != null;
     }
 
+    /**
+     * Returns the value to which the specified key is mapped, or null if this
+     * map contains no mapping for the key.
+     */
     @Override
     public V get(K key) {
         return get(root, key);
@@ -54,6 +58,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         }
     }
 
+    /** Returns the number of key-value mappings in this map. */
     @Override
     public int size() {
         return size(root);
@@ -65,9 +70,29 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         } else return root.size;
     }
 
+    /** Associates the specified value with the specified key in this map. */
     @Override
     public void put(K key, V value) {
+        if (key == null) {
+            throw new IllegalArgumentException("calls put() with a null key");
+        }
+        root = put(root, key, value);
+    }
 
+    private Node put(Node root, K key, V value) {
+        if (root == null) {
+            return new Node(key, value, 1);
+        }
+        int cmp = key.compareTo(root.key);
+        if (cmp < 0) {
+            root.left = put(root.left, key, value);
+        } else if (cmp > 0) {
+            root.right = put(root.right, key, value);
+        } else {
+            root.val = value;
+        }
+        root.size = 1 + size(root.left) + size(root.right);
+        return root;
     }
 
     @Override
@@ -91,7 +116,13 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
     }
 
     /** Prints out the BSTMap in order of increasing Key. */
-    public void printInOrder() {
-
+    public void printInOrder(Node root) {
+        if (root.left != null) {
+            printInOrder(root.left);
+        }
+        System.out.println(root.val);
+        if (root.right != null) {
+            printInOrder(root.right);
+        }
     }
 }
