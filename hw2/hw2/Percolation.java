@@ -4,13 +4,13 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
     private int gridN;  // Length of the grid.
-    private int numberOfOpenSites;
-    private boolean[] isOpen;
+    private int numberOfOpenSites;  // Total open sites in the grid.
+    private boolean[] isOpen;   // 1-D array to store boolean value of the index, checks if sites are open or not.
     private WeightedQuickUnionUF uf;    // A set that checks whether the water can reach to bottom.
     private int indexOfVirtualTop;
     private int indexOfVirtualBottom;
 
-    /** Translate 2 dimensional array to integer. */
+    /** Translate 2 dimensional array to integer index. */
     private int xyTo1D(int row, int col) {
         return row * gridN + col;
     }
@@ -41,7 +41,31 @@ public class Percolation {
             throw new IndexOutOfBoundsException("Outside of the grid");
         }
         if (!isOpen[xyTo1D(row, col)]) {
-
+            isOpen[xyTo1D(row, col)] = true;
+            numberOfOpenSites += 1;
+            /** Checks if neighboring block is open or not, connects them if open. */
+            //top
+            if (isValid(row - 1, col) && isOpen(row - 1, col)) {
+                uf.union(xyTo1D(row, col), xyTo1D(row - 1, col));
+            }
+            //bottom
+            if (isValid(row + 1, col) && isOpen(row + 1, col)) {
+                uf.union(xyTo1D(row, col), xyTo1D(row + 1, col));
+            }
+            //right
+            if (isValid(row, col + 1) && isOpen(row, col + 1)) {
+                uf.union((xyTo1D(row, col)), xyTo1D(row, col + 1));
+            }
+            //left
+            if (isValid(row, col - 1) && isOpen(row, col - 1)) {
+                uf.union((xyTo1D(row, col)), xyTo1D(row, col - 1));
+            }
+            /** If the cell is at top or bottom, connect it to the virtual top or virtual bottom. */
+            if (row == 0) {
+                uf.union(xyTo1D(row, col), indexOfVirtualTop);
+            } else if (row == gridN - 1) {
+                uf.union((xyTo1D(row, col)), indexOfVirtualBottom);
+            }
         }
 
     }
