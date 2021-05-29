@@ -7,6 +7,7 @@ public class Percolation {
     private int numberOfOpenSites;  // Total open sites in the grid.
     private boolean[] isOpen;   // 1-D array to store boolean value of the index, checks if sites are open or not.
     private WeightedQuickUnionUF uf;    // A set that checks whether the water can reach to bottom.
+    private WeightedQuickUnionUF preventBackWashuf;   // A set without including virtual bottom site.
     private int indexOfVirtualTop;
     private int indexOfVirtualBottom;
 
@@ -15,6 +16,7 @@ public class Percolation {
         return row * gridN + col;
     }
 
+    /** Checks if the index is valid or not. */
     private boolean isValid(int row, int col) {
         if (row < 0 || col < 0 || row >= gridN || col >= gridN) {
             return false;
@@ -29,6 +31,7 @@ public class Percolation {
         }
         gridN = N;
         uf = new WeightedQuickUnionUF(N * N + 2); // Includes virtual top and bottom sites.
+        preventBackWashuf = new WeightedQuickUnionUF(N * N + 1);    // Includes only virtual top site.
         isOpen = new boolean[N * N];
         indexOfVirtualTop = N * N;
         indexOfVirtualBottom = N * N + 1;
@@ -47,22 +50,27 @@ public class Percolation {
             //top
             if (isValid(row - 1, col) && isOpen(row - 1, col)) {
                 uf.union(xyTo1D(row, col), xyTo1D(row - 1, col));
+                preventBackWashuf.union(xyTo1D(row, col), xyTo1D(row - 1, col));
             }
             //bottom
             if (isValid(row + 1, col) && isOpen(row + 1, col)) {
                 uf.union(xyTo1D(row, col), xyTo1D(row + 1, col));
+                preventBackWashuf.union(xyTo1D(row, col), xyTo1D(row + 1, col));
             }
             //right
             if (isValid(row, col + 1) && isOpen(row, col + 1)) {
                 uf.union((xyTo1D(row, col)), xyTo1D(row, col + 1));
+                preventBackWashuf.union((xyTo1D(row, col)), xyTo1D(row, col + 1));
             }
             //left
             if (isValid(row, col - 1) && isOpen(row, col - 1)) {
                 uf.union((xyTo1D(row, col)), xyTo1D(row, col - 1));
+                preventBackWashuf.union((xyTo1D(row, col)), xyTo1D(row, col - 1));
             }
             /** If the cell is at top or bottom, connect it to the virtual top or virtual bottom. */
             if (row == 0) {
                 uf.union(xyTo1D(row, col), indexOfVirtualTop);
+                preventBackWashuf.union(xyTo1D(row, col), indexOfVirtualTop);
             } else if (row == gridN - 1) {
                 uf.union((xyTo1D(row, col)), indexOfVirtualBottom);
             }
@@ -84,7 +92,7 @@ public class Percolation {
         if (!isValid(row, col)) {
             throw new IndexOutOfBoundsException("Outside of the grid");
         }
-        return uf.connected(indexOfVirtualTop, xyTo1D(row, col));
+        return preventBackWashuf.connected(indexOfVirtualTop, xyTo1D(row, col));
     }
 
     /** Number of open sites */
