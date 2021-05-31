@@ -8,8 +8,8 @@
  ******************************************************************************/
 package hw2;
 
-import edu.princeton.cs.introcs.StdStats;
 import edu.princeton.cs.introcs.StdRandom;
+import edu.princeton.cs.introcs.StdStats;
 
 public class PercolationStats {
     private double[] percolationNum;
@@ -19,12 +19,16 @@ public class PercolationStats {
         if (N <= 0 || T <= 0) {
             throw new IllegalArgumentException("N and T should be positive");
         }
+        /* Monte Carlo simulation. */
         percolationNum = new double[T];
-        for (int i = 0; i < T; i++) {
+        for (int i = 0; i < T; i++) {   // T times experiments
             Percolation p = pf.make(N);
-
+            while (!p.percolates()) {
+                p.open(StdRandom.uniform(N), StdRandom.uniform(N));
+            }
+            /* Percolation threshold */
+            percolationNum[i] = (double) p.numberOfOpenSites() / (N * N);
         }
-
     }
 
     /** Sample mean of percolation threshold. */
@@ -39,11 +43,26 @@ public class PercolationStats {
 
     /** Low endpoint of 95% confidence interval. */
     public double confidenceLow() {
-        return 0;
+        double mean = mean();
+        double stdev = stddev();
+        return mean - (1.96 * stdev) / Math.pow(percolationNum.length, 0.5);
     }
 
     /** High endpoint of 95% confidence interval. */
     public double confidenceHigh() {
-        return 0;
+        double mean = mean();
+        double stdev = stddev();
+        return mean + (1.96 * stdev) / Math.pow(percolationNum.length, 0.5);
+    }
+
+    public static void main(String[] args) {
+        PercolationFactory pf = new PercolationFactory();
+        int N = 20;
+        int T = 1000;
+        PercolationStats ps = new PercolationStats(N, T, pf);
+        System.out.println("N = " + N + ", T = " + T);
+        System.out.println("Estimated percolation threshold = " + ps.mean());
+        System.out.println("Estimated standard deviation = " + ps.stddev());
+        System.out.println("95% confidence interval = " + "[" + ps.confidenceLow() + ", " + ps.confidenceHigh() + "]");
     }
 }
