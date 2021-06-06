@@ -1,7 +1,9 @@
 package hw3.hash;
-import java.awt.Color;
-import edu.princeton.cs.algs4.StdRandom;
+
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdRandom;
+
+import java.awt.*;
 
 
 public class SimpleOomage implements Oomage {
@@ -12,10 +14,28 @@ public class SimpleOomage implements Oomage {
     private static final double WIDTH = 0.01;
     private static final boolean USE_PERFECT_HASH = false;
 
+    /**
+     * 1. x.equals(x) must be true for any non-null x.
+     * 2. x.equals(y) must be the same as y.equals(x) for any non-null x and y.
+     * 3. If x.equals(y) and y.equals(z), then x.equals(z) for any non-null x, y, and z.
+     * 4. x.equals(y) must return the same result if called multiple times, so long as the object referenced by x and y do not change.
+     * 5. x.equals(null) should be false for any non-null x.
+     */
     @Override
     public boolean equals(Object o) {
         // TODO: Write this method.
-        return false;
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+        SimpleOomage so = (SimpleOomage) o;
+        if (red == so.red && green == so.green && blue == so.blue) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /* Uncomment this method after you've written
