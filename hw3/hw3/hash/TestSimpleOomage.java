@@ -1,12 +1,12 @@
 package hw3.hash;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+
+import static org.junit.Assert.*;
 
 
 public class TestSimpleOomage {
@@ -26,6 +26,22 @@ public class TestSimpleOomage {
           meaning no two SimpleOomages should EVER have the same
           hashCode UNLESS they have the same red, blue, and green values!
          */
+        SimpleOomage oo = new SimpleOomage(5, 10, 20);
+        for (int i = 0; i < 52; i++) {
+            for (int j = 0; j < 52; j++) {
+                for (int k = 0; k < 52; k++) {
+                    int r = i * 5;
+                    int g = j * 5;
+                    int b = k * 5;
+                    SimpleOomage ooHC = new SimpleOomage(r, g, b);
+                    if (r == 5 && g == 10 && b == 20) {
+                        assertEquals(oo.hashCode(), ooHC.hashCode());
+                    } else {
+                        assertNotEquals(oo.hashCode(), ooHC.hashCode());
+                    }
+                }
+            }
+        }
     }
 
     @Test
@@ -39,7 +55,6 @@ public class TestSimpleOomage {
         assertNotEquals(ooA, "ketchup");
     }
 
-    /*
     @Test
     public void testHashCodeAndEqualsConsistency() {
         SimpleOomage ooA = new SimpleOomage(5, 10, 20);
@@ -47,10 +62,9 @@ public class TestSimpleOomage {
         HashSet<SimpleOomage> hashSet = new HashSet<>();
         hashSet.add(ooA);
         assertTrue(hashSet.contains(ooA2));
-    }*/
+    }
 
-    /* TODO: Uncomment this test after you finish haveNiceHashCodeSpread in OomageTestUtility */
-    /*@Test
+    @Test
     public void testRandomOomagesHashCodeSpread() {
         List<Oomage> oomages = new ArrayList<>();
         int N = 10000;
@@ -60,7 +74,7 @@ public class TestSimpleOomage {
         }
 
         assertTrue(OomageTestUtility.haveNiceHashCodeSpread(oomages, 10));
-    }*/
+    }
 
     /** Calls tests for SimpleOomage. */
     public static void main(String[] args) {
