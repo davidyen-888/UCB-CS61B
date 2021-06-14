@@ -1,0 +1,77 @@
+/** InsertRandomSpeedTest.java */
+
+ This program inserts lexicographically increasing Stringsinto Maps as <String, Integer> pairs.
+
+Enter # strings to insert into ULLMap: 10000
+class ULLMap: 1.25 sec
+
+Enter # strings to insert into MyHashMap: 10000
+class MyHashMap: 0.03 sec
+
+Enter # strings to insert into Java's HashMap: 10000
+Java's Built-in HashMap: 0.02 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 20000
+class ULLMap: 5.96 sec
+
+Enter # strings to insert into MyHashMap: 20000
+class MyHashMap: 0.01 sec
+
+Enter # strings to insert into Java's HashMap: 20000
+Java's Built-in HashMap: 0.01 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 50000
+--Stack Overflow -- couldn't add 50000 strings.
+
+Enter # strings to insert into MyHashMap: 50000
+class MyHashMap: 0.07 sec
+
+Enter # strings to insert into Java's HashMap: 50000
+Java's Built-in HashMap: 0.03 sec
+
+Would you like to try more timed-tests? (y/n): n
+
+Process finished with exit code 0
+
+/** InsertInOrderSpeedTest.java */
+
+ This program inserts lexicographically increasing Stringsinto Maps as <String, Integer> pairs.
+
+Enter # strings to insert into ULLMap: 10000
+class ULLMap: 1.24 sec
+
+Enter # strings to insert into MyHashMap: 10000
+class MyHashMap: 0.03 sec
+
+Enter # strings to insert into Java's HashMap: 10000
+Java's Built-in HashMap: 0.02 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 20000
+class ULLMap: 9.52 sec
+
+Enter # strings to insert into MyHashMap: 20000
+class MyHashMap: 0.03 sec
+
+Enter # strings to insert into Java's HashMap: 20000
+Java's Built-in HashMap: 0.03 sec
+
+Would you like to try more timed-tests? (y/n): y
+
+Enter # strings to insert into ULLMap: 50000
+--Stack Overflow -- couldn't add 50000 strings.
+
+Enter # strings to insert into MyHashMap: 50000
+class MyHashMap: 0.04 sec
+
+Enter # strings to insert into Java's HashMap: 50000
+Java's Built-in HashMap: 0.03 sec
+
+Would you like to try more timed-tests? (y/n): n
+
+Process finished with exit code 0
