@@ -69,7 +69,7 @@ public class TestMyHashMap {
         assertEquals(456, b.size());
     }
 
-    //assumes get/containskey work
+    //assumes get containskey work
     @Test
     public void sanityPutTest() {
         MyHashMap<String, Integer> b = new MyHashMap<String, Integer>();
