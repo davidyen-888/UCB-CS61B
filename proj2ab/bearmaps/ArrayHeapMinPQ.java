@@ -8,8 +8,8 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
 
     private PriorityNode[] heap;    // store items at indices 1 to n.
     private HashMap<T, Integer> items;  // store items with Int indices in heap.
-    private double loadfactorMin;
-    private double loadfactorMax;
+    private final double loadfactorMin;
+    private final double loadfactorMax;
 
     /** Initializes an empty priority queue with the given initial capacity. */
     public ArrayHeapMinPQ() {
@@ -24,9 +24,9 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
         T item;
         double priority;
 
-        PriorityNode(T item, double priority) {
-            this.item = item;
-            this.priority = priority;
+        PriorityNode(T i, double p) {
+            item = i;
+            priority = p;
         }
 
         T getItem() {
@@ -55,29 +55,9 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
             }
         }
     }
-
-    /**
-     * Adds an item of type T with the given priority value. Throws an
-     * IllegalArgumentException if item is already present.
-     * You may assume that item is never null.
-     *
-     * @param item
-     * @param priority
-     */
-    @Override
-    public void add(T item, double priority) {
-        if (contains(item)) {
-            throw new IllegalArgumentException("item is already present");
-        }
-        if ((double) (size() / heap.length) > loadfactorMax) {
-            resize(heap.length * 2);
-        }
-        int pos=size()+1;
-        heap[pos]=new PriorityNode(item, priority);
-        items.put(item, pos);
-        swim(pos);
-    }
-
+    /***************************************************************************
+     * All of the helper methods.
+     ***************************************************************************/
     /**
      * Returns the index of the parent item.
      * If the index = 1(Root), returns its own index.
@@ -87,6 +67,23 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
             return 1;
         }
         return i / 2;
+    }
+
+    /**
+     * Returns the index of the smallest child item.
+     * If the index has no child, returns its own index.
+     */
+    private int child(int i) {
+        // no child
+        if (size() < i * 2) {
+            return i;
+        }
+        // left child
+        if (size() == i * 2 || heap[i * 2].compareTo(heap[i * 2 + 1]) <= 0) {
+            return i * 2;
+        }
+        // right child
+        return i * 2 + 1;
     }
 
     /** Swap the index a and b. */
@@ -109,6 +106,15 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
         }
     }
 
+    /** Swaps the item recursively if index i has higher priority than its child. */
+    private void sink(int i) {
+        if (heap[i].compareTo(heap[child(i)]) > 0) {   // child is smaller
+            swap(i, child(i));
+            sink(child(i));
+        }
+    }
+
+    /** Resize the heap to the size of newCapacity. */
     private void resize(int newCapacity) {
         PriorityNode[] temp = new ArrayHeapMinPQ.PriorityNode[newCapacity];
         for (int i = 0; i <= size(); i++) {
@@ -118,32 +124,69 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
     }
 
     /**
+     * Adds an item of type T with the given priority value. Throws an
+     * IllegalArgumentException if item is already present.
+     * You may assume that item is never null.
+     *
+     * @param item
+     * @param priority
+     */
+    @Override
+    public void add(T item, double priority) {
+        if (contains(item)) {
+            throw new IllegalArgumentException("item is already present");
+        }
+        if ((double) (size() / heap.length) > loadfactorMax) {
+            resize(heap.length * 2);
+        }
+        int pos = size() + 1;
+        heap[pos] = new PriorityNode(item, priority);
+        items.put(item, pos);
+        swim(pos);
+    }
+
+    /**
      * Returns true if the PQ contains the given item.
      *
      * @param item
      */
     @Override
     public boolean contains(T item) {
-        if (size()==0){
+        if (size() == 0) {
             return false;
         }
         return items.containsKey(item);
     }
 
-    /** Returns the item with smallest priority.(Index = 1)
-     *  If no items exist, throw a NoSuchElementException. */
+    /**
+     * Returns the item with smallest priority.(Index = 1)
+     * If no items exist, throw a NoSuchElementException.
+     */
     @Override
     public T getSmallest() {
-        if (size()==0){
-            throw new NoSuchElementException("empty PQ");
+        if (size() == 0) {
+            throw new NoSuchElementException("the PQ is empty");
         }
-        return heap[1].item;
+        return heap[1].getItem();
     }
 
     /** Removes and returns the minimum item. Throws NoSuchElementException if the PQ is empty. */
     @Override
     public T removeSmallest() {
-        return null;
+        if (size() == 0) {
+            throw new NoSuchElementException("PQ is empty");
+        }
+        if ((double) size() / heap.length < loadfactorMin) {
+            resize(heap.length / 2);
+        }
+        T smallest = heap[1].getItem();
+        heap[1] = heap[size()];
+        heap[size()] = null;
+        items.remove(smallest);
+        if (size() > 0) {
+            sink(1);
+        }
+        return smallest;
     }
 
     /** Returns the number of items in the PQ. */
@@ -161,6 +204,16 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
      */
     @Override
     public void changePriority(T item, double priority) {
-
+        if (!contains(item)) {
+            throw new NoSuchElementException("the item doesn't exist");
+        }
+        int index = items.get(item);
+        double oldPriority = heap[index].getPriority();
+        heap[index].setPriority(priority);
+        if (priority > oldPriority) {
+            sink(index);
+        } else {
+            swim(index);
+        }
     }
 }
