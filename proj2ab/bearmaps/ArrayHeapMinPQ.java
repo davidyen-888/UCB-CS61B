@@ -136,7 +136,7 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
         if (contains(item)) {
             throw new IllegalArgumentException("item is already present");
         }
-        if ((double) (size() / heap.length) > loadfactorMax) {
+        if (size() / (double) heap.length > loadfactorMax) {
             resize(heap.length * 2);
         }
         int pos = size() + 1;
@@ -176,7 +176,7 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T> {
         if (size() == 0) {
             throw new NoSuchElementException("PQ is empty");
         }
-        if ((double) size() / heap.length < loadfactorMin) {
+        if (size() / (double) heap.length < loadfactorMin) {
             resize(heap.length / 2);
         }
         T smallest = heap[1].getItem();
