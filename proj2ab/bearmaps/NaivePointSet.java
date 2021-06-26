@@ -6,14 +6,15 @@
  */
 package bearmaps;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NaivePointSet implements PointSet {
-    private List<Point> points;
+    private List<Point> myPoints;
 
-    public NaivePointSet(List<Point> points) {   // assume points has at least size 1
-
-        this.points = points;
+    public NaivePointSet(List<Point> points) {   // assume points has at least size 1'
+        myPoints = new ArrayList<>();
+        myPoints.addAll(points);
     }
 
     /**
@@ -22,16 +23,15 @@ public class NaivePointSet implements PointSet {
      */
     @Override
     public Point nearest(double x, double y) {
-        Point point = new Point(x, y);
-        Point nearestPoint = null;
-        double minDistance = 0;
-        for (Point p : points) {
-            if (minDistance == 0 || Point.distance(point, p) < minDistance) {
-                minDistance = Point.distance(point, p);
-                nearestPoint = p;
+        Point bestPoint = myPoints.get(0);
+        Point virtualGoal = new Point(x, y);
+        for (Point p : myPoints) {
+            double currDistance = Point.distance(p, virtualGoal);
+            if (currDistance < Point.distance(bestPoint, virtualGoal)) {
+                bestPoint = p;
             }
         }
-        return nearestPoint;
+        return bestPoint;
     }
 
     public static void main(String[] args) {
