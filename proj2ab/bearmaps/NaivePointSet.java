@@ -12,6 +12,7 @@ public class NaivePointSet implements PointSet {
     private List<Point> points;
 
     public NaivePointSet(List<Point> points) {   // assume points has at least size 1
+
         this.points = points;
     }
 
