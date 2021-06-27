@@ -29,10 +29,13 @@ public class KDTree implements PointSet {
         if (n == null) {
             return new Node(p, orientation);
         }
-        int cmp = comparePoints(n.p, p, orientation);
+        if (p.equals(n.p)) {
+            return n;
+        }
+        int cmp = comparePoints(p, n.p, orientation);
         if (cmp < 0) {
             n.leftChild = add(p, n.leftChild, !orientation);
-        } else if (cmp > 0) {
+        } else {    // cmp >= 0
             n.rightChild = add(p, n.rightChild, !orientation);
         }
         return n;
@@ -51,9 +54,12 @@ public class KDTree implements PointSet {
         return null;
     }
 
-    public static void main(String[] args) {
-        // Constructs Points as the KDTree insertion demo in
-        // @Source: https://docs.google.com/presentation/d/1WW56RnFa3g6UJEquuIBymMcu9k2nqLrOE1ZlnTYFebg/edit#slide=id.g54b6045b73_0_38
+    /**
+     * Constructs Points as the KDTree insertion demo.
+     *
+     * @Source: https://docs.google.com/presentation/d/1WW56RnFa3g6UJEquuIBymMcu9k2nqLrOE1ZlnTYFebg/edit#slide=id.g54b6045b73_0_38
+     */
+    private static void buildLectureTree() {
         Point A = new Point(2, 3);
         Point B = new Point(4, 2);
         Point C = new Point(4, 5);
@@ -62,5 +68,16 @@ public class KDTree implements PointSet {
         Point F = new Point(4, 4);
 
         KDTree kd = new KDTree(List.of(A, B, C, D, E, F));
+    }
+
+    private static void buildTreeWithDoubles() {
+        Point A = new Point(2, 3);
+        Point B = new Point(2, 3);
+
+        KDTree kd = new KDTree(List.of(A, B));
+    }
+
+    public static void main(String[] args) {
+        buildTreeWithDoubles();
     }
 }
