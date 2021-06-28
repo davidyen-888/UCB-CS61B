@@ -51,33 +51,18 @@ public class KDTree implements PointSet {
 
     @Override
     public Point nearest(double x, double y) {
-        return null;
+        return nearestHelper(root, new Point(x, y), root).p;
     }
 
-    /**
-     * Constructs Points as the KDTree insertion demo.
-     *
-     * @Source: https://docs.google.com/presentation/d/1WW56RnFa3g6UJEquuIBymMcu9k2nqLrOE1ZlnTYFebg/edit#slide=id.g54b6045b73_0_38
-     */
-    private static void buildLectureTree() {
-        Point A = new Point(2, 3);
-        Point B = new Point(4, 2);
-        Point C = new Point(4, 5);
-        Point D = new Point(3, 3);
-        Point E = new Point(1, 5);
-        Point F = new Point(4, 4);
-
-        KDTree kd = new KDTree(List.of(A, B, C, D, E, F));
-    }
-
-    private static void buildTreeWithDoubles() {
-        Point A = new Point(2, 3);
-        Point B = new Point(2, 3);
-
-        KDTree kd = new KDTree(List.of(A, B));
-    }
-
-    public static void main(String[] args) {
-        buildTreeWithDoubles();
+    private Node nearestHelper(Node n, Point goal, Node best) {
+        if (n == null) {
+            return best;
+        }
+        if (Point.distance(n.p, goal) < Point.distance(best.p, goal)) {
+            best = n;
+        }
+        best = nearestHelper(n.leftChild, goal, best);
+        best = nearestHelper(n.rightChild, goal, best);
+        return best;
     }
 }
