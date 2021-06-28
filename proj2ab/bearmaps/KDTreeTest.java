@@ -43,14 +43,14 @@ public class KDTreeTest {
     public void testNearestRandom() {
         Random r = new Random(500);
         List<Point> points = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000; i++) {
             points.add(new Point(r.nextDouble(), r.nextDouble()));
         }
         NaivePointSet nps = new NaivePointSet(points);
         KDTree kd = new KDTree(points);
         long time1 = 0;
         long time2 = 0;
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 200; i++) {
             double rX = r.nextDouble();
             double rY = r.nextDouble();
             long start1 = System.currentTimeMillis();
@@ -61,8 +61,8 @@ public class KDTreeTest {
             Point pKD = kd.nearest(rX, rY);
             long end2 = System.currentTimeMillis();
             time2 += end2 - start2;
-            assertEquals(pNPS.getX(), pKD.getX(), 0.01);
-            assertEquals(pNPS.getY(), pKD.getY(), 0.01);
+            assertEquals(pNPS.getX(), pKD.getX(),0.01);
+            assertEquals(pNPS.getY(), pKD.getY(),0.01);
         }
         System.out.println("Total time elapsed of NaivePointSet: " + time1 / 1000.0 + " seconds.");
         System.out.println("Total time elapsed of KDTree: " + time2 / 1000.0 + " seconds.");
