@@ -56,7 +56,7 @@ public class ArrayHeapMinPQTest {
 
     @Test
     public void testRuntime() {
-        Random r=new Random();
+        Random r = new Random();
         NaiveMinPQ<Integer> n = new NaiveMinPQ();
         ArrayHeapMinPQ<Integer> a = new ArrayHeapMinPQ<>();
         for (int i = 0; i < 1000000; i++) {
