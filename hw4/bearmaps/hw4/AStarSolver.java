@@ -1,22 +1,24 @@
 package bearmaps.hw4;
 
 import bearmaps.proj2ab.ArrayHeapMinPQ;
+import edu.princeton.cs.algs4.Stopwatch;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 //    Since AStarGraph<Vertex> uses a generic type for vertices, the input graph’s vertices may be a reference type.
 //    Thus, make sure to use the equals method whenever you want to compare two vertices for equality.
 
 public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
-    private ArrayHeapMinPQ<Vertex> fringe;      // PQ that stores vertices to be visited
+    private ArrayHeapMinPQ<Vertex> fringe;      // PQ that stores vertices to be visited and relaxed
     private SolverOutcome outcome;      // problem solved status
     private List<Vertex> solution;      // in order vertices of the shortest path
     private double solutionWeight;      // shortest path's total weight
     private int numStatesExplored;      // number of vertices visited
     private double timeSpent;     // total time to find the shortest path
-    private HashMap<Vertex, Double> disTo;  // distance from start vertex
-    private HashMap<Vertex, Vertex> edgeTo; // edge to the leading vertex
+    private HashMap<Vertex, Double> disTo;  // current shortest distance to vertex
+    private HashMap<Vertex, Vertex> edgeTo; // a pair of (v1, v2) means v2 is pointed to v1
 
     /**
      * Constructor which finds the solution, computing everything necessary for all other
@@ -31,8 +33,67 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
      *          relax all edges outgoing from p
      */
     public AStarSolver(AStarGraph<Vertex> input, Vertex start, Vertex end, double timeout) {
+        // Variable initialization
+        fringe = new ArrayHeapMinPQ<>();
+        numStatesExplored = 0;
+        disTo = new HashMap<>();
+        edgeTo = new HashMap<>();
+        solution = new LinkedList<>();
+        solutionWeight = 0;
+        Stopwatch sw = new Stopwatch();
 
+        // Insert the source vertex into the PQ.
+        fringe.add(start, input.estimatedDistanceToGoal(start, end));
+        disTo.put(start, 0.0);
+        edgeTo.put(start, null);
+
+        // Repeat until the PQ is empty, PQ.getSmallest() is the goal, or timeout is exceeded
+        while (fringe.size() != 0) {
+            Vertex p = fringe.removeSmallest();
+            numStatesExplored++;
+            // If goal is found, update the solution and stop.
+            if (p.equals(end)) {
+                outcome = SolverOutcome.SOLVED;
+                solutionWeight = disTo(end);
+                timeSpent = sw.elapsedTime();
+                solution = updateSolution(edgeTo, end);
+                return;
+            }
+            // Timeout is exceeded, stop.
+            else if (timeSpent > timeout) {
+                outcome = SolverOutcome.TIMEOUT;
+                solutionWeight = 0;
+                timeSpent = sw.elapsedTime();
+                return;
+            }
+            // Relax all edges outgoing from p.
+            else {
+                for (WeightedEdge<Vertex> e : input.neighbors(p)) {
+                    relax(e, input, end);
+                }
+            }
+        }
+        // Goal is not found.
+        outcome = SolverOutcome.UNSOLVABLE;
+        solutionWeight = 0;
+        timeSpent = sw.elapsedTime();
     }
+
+    /** Return list of solution from HashMap edgeTo. */
+    private List<Vertex> updateSolution(HashMap<Vertex, Vertex> edgeTo, Vertex end) {
+        LinkedList<Vertex> result = new LinkedList<>();
+        while (edgeTo.containsKey(end)) {
+            result.addFirst(end);
+            end = edgeTo.get(end);
+        }
+        return result;
+    }
+
+    /** Returns closest distance to the vertex, otherwise set as infinity. */
+    private double disTo(Vertex v) {
+        return disTo.getOrDefault(v, Double.MAX_VALUE);
+    }
+
 
     /**
      * relax(e):
@@ -42,8 +103,19 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
      *          if q is in the PQ: changePriority(q, distTo[q] + h(q, goal))
      *          if q is not in PQ: add(q, distTo[q] + h(q, goal))
      * */
-    private void relax(AStarGraph<Vertex> input, Vertex end, Vertex p) {
-
+    private void relax(WeightedEdge<Vertex> e, AStarGraph<Vertex> graph, Vertex end) {
+        Vertex p = e.from();
+        Vertex q = e.to();
+        double w = e.weight();
+        if ((disTo(p) + w) < disTo(q)) {
+            disTo.put(q, disTo(p) + w);
+            edgeTo.put(q, p);
+            if (fringe.contains(q)) {
+                fringe.changePriority(q, disTo(q) + graph.estimatedDistanceToGoal(q, end));
+            } else {
+                fringe.add(q, disTo(q) + graph.estimatedDistanceToGoal(q, end));
+            }
+        }
     }
 
     /**
