@@ -7,9 +7,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-//    Since AStarGraph<Vertex> uses a generic type for vertices, the input graph’s vertices may be a reference type.
-//    Thus, make sure to use the equals method whenever you want to compare two vertices for equality.
-
 public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
     private ArrayHeapMinPQ<Vertex> fringe;      // PQ that stores vertices to be visited and relaxed
     private SolverOutcome outcome;      // problem solved status
@@ -47,7 +44,9 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
         disTo.put(start, 0.0);
         edgeTo.put(start, null);
 
-        // Repeat until the PQ is empty, PQ.getSmallest() is the goal, or timeout is exceeded
+        // Repeat until the PQ is empty, PQ.getSmallest() is the goal, or timeout is exceeded:
+        //      p = PQ.removeSmallest()
+        //      relax all edges outgoing from p
         while (fringe.size() != 0) {
             Vertex p = fringe.removeSmallest();
             numStatesExplored++;
