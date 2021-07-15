@@ -1,5 +1,7 @@
 import edu.princeton.cs.algs4.Queue;
 
+import java.util.NoSuchElementException;
+
 public class MergeSort {
     /**
      * Removes and returns the smallest item that is in q1 or q2.
@@ -64,10 +66,13 @@ public class MergeSort {
      *              greatest.
      *
      */
-    private static <Item extends Comparable> Queue<Item> mergeSortedQueues(
-            Queue<Item> q1, Queue<Item> q2) {
+    private static <Item extends Comparable> Queue<Item> mergeSortedQueues(Queue<Item> q1, Queue<Item> q2) {
         // Your code here!
-        return null;
+        Queue<Item> mergedQueue = new Queue<>();
+        while (q1.size() + q2.size() > 0) {
+            mergedQueue.enqueue(getMin(q1, q2));
+        }
+        return mergedQueue;
     }
 
     /**
@@ -80,9 +85,16 @@ public class MergeSort {
      * @return A Queue containing every item in "items".
      *
      */
-    public static <Item extends Comparable> Queue<Item> mergeSort(
-            Queue<Item> items) {
+    public static <Item extends Comparable> Queue<Item> mergeSort(Queue<Item> items) {
         // Your code here!
-        return items;
+        if (items == null) {
+            throw new NoSuchElementException("invalid items");
+        }
+        Queue<Queue<Item>> singleItemQueues = makeSingleItemQueues(items);
+        while (singleItemQueues.size() > 1) {
+            Queue<Item> sorted = mergeSortedQueues(singleItemQueues.dequeue(), singleItemQueues.dequeue());
+            singleItemQueues.enqueue(sorted);
+        }
+        return singleItemQueues.dequeue();
     }
 }
