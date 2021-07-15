@@ -9,7 +9,7 @@ public class MergeSort {
      *
      * @param   q1  A Queue in sorted order from least to greatest.
      * @param   q2  A Queue in sorted order from least to greatest.
-     * @return      The smallest item that is in q1 or q2.
+     * @return The smallest item that is in q1 or q2.
      */
     private static <Item extends Comparable> Item getMin(
             Queue<Item> q1, Queue<Item> q2) {
@@ -37,13 +37,18 @@ public class MergeSort {
      * This method should take linear time.
      *
      * @param   items  A Queue of items.
-     * @return         A Queue of queues, each containing an item from items.
+     * @return A Queue of queues, each containing an item from items.
      *
      */
-    private static <Item extends Comparable> Queue<Queue<Item>>
-            makeSingleItemQueues(Queue<Item> items) {
+    private static <Item extends Comparable> Queue<Queue<Item>> makeSingleItemQueues(Queue<Item> items) {
         // Your code here!
-        return null;
+        Queue<Queue<Item>> QueueOfQueues = new Queue<>();
+        for (Item i : items) {
+            Queue<Item> q = new Queue<>();
+            q.enqueue(i);
+            QueueOfQueues.enqueue(q);
+        }
+        return QueueOfQueues;
     }
 
     /**
@@ -55,7 +60,7 @@ public class MergeSort {
      *
      * @param   q1  A Queue in sorted order from least to greatest.
      * @param   q2  A Queue in sorted order from least to greatest.
-     * @return      A Queue containing all of the q1 and q2 in sorted order, from least to
+     * @return A Queue containing all of the q1 and q2 in sorted order, from least to
      *              greatest.
      *
      */
@@ -72,7 +77,7 @@ public class MergeSort {
      * this method should be non-destructive and not empty "items".
      *
      * @param   items  A Queue to be sorted.
-     * @return         A Queue containing every item in "items".
+     * @return A Queue containing every item in "items".
      *
      */
     public static <Item extends Comparable> Queue<Item> mergeSort(
