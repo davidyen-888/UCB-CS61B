@@ -12,12 +12,8 @@ public class TestSortAlgs {
         tas.enqueue("Joe");
         tas.enqueue("Omar");
         tas.enqueue("Itai");
-        Queue<String> sorted = QuickSort.quickSort(tas);
-        assertTrue(isSorted(sorted));
-        String s = sorted.peek();
-        for (String next : sorted) {
-            assertFalse(s.compareTo(next) > 0);
-        }
+        tas = QuickSort.quickSort(tas);
+        assertTrue(isSorted(tas));
     }
 
     @Test
@@ -28,10 +24,6 @@ public class TestSortAlgs {
         tas.enqueue("Itai");
         tas = MergeSort.mergeSort(tas);
         assertTrue(isSorted(tas));
-//        String s = tas.peek();
-//        for (String next : tas) {
-//            assertFalse(s.compareTo(next) > 0);
-//        }
     }
 
     /**
