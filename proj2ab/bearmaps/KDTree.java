@@ -10,7 +10,7 @@ public class KDTree implements PointSet {
     private static class Node {
         public Point pt;
         public int dimension;
-        public Node leftChild, rightChild;   // rightChild can also be upChild(depends on level), vice versa.
+        public Node leftChild, rightChild; // rightChild can also be upChild(depends on level), vice versa.
 
         public Node(Point p, int di, Node leftChild, Node rightChild) {
             pt = p;
@@ -35,13 +35,13 @@ public class KDTree implements PointSet {
     private Node add(Point p, Node n, int or) {
         if (n == null) {
             return new Node(p, or, null, null);
-        } else if (p.equals(n.pt)) {    // node already exists
+        } else if (p.equals(n.pt)) { // node already exists
             return n;
         } else {
             double cmp = comparePoints(p, n.pt, or);
             if (cmp < 0) {
                 n.leftChild = add(p, n.leftChild, (or + 1) % 2);
-            } else {    // cmp >= 0
+            } else { // cmp >= 0
                 n.rightChild = add(p, n.rightChild, (or + 1) % 2);
             }
         }
@@ -51,7 +51,7 @@ public class KDTree implements PointSet {
     /** Compares the two points' x or y value based on the orientation. */
     private double comparePoints(Point a, Point b, int di) {
         if (di == XAxis) {
-            return a.getX() - b.getY();
+            return a.getX() - b.getX();
         } else {
             return a.getY() - b.getY();
         }
@@ -75,7 +75,7 @@ public class KDTree implements PointSet {
         // Determines good and bad side
         Node goodSide, badSide;
         double cmp = comparePoints(goal, n.pt, n.dimension);
-        if (cmp < 0) {  // goal < n
+        if (cmp < 0) { // goal < n
             goodSide = n.leftChild;
             badSide = n.rightChild;
         } else {
