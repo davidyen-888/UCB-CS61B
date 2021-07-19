@@ -2,9 +2,9 @@ package bearmaps.proj2c.server.handler.impl;
 
 import bearmaps.proj2c.AugmentedStreetMapGraph;
 import bearmaps.proj2c.server.handler.APIRouteHandler;
+import bearmaps.proj2c.utils.Constants;
 import spark.Request;
 import spark.Response;
-import bearmaps.proj2c.utils.Constants;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -17,8 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static bearmaps.proj2c.utils.Constants.SEMANTIC_STREET_GRAPH;
-import static bearmaps.proj2c.utils.Constants.ROUTE_LIST;
+import static bearmaps.proj2c.utils.Constants.*;
 
 /**
  * Handles requests from the web browser for map images. These images
@@ -84,11 +83,38 @@ public class RasterAPIHandler extends APIRouteHandler<Map<String, Double>, Map<S
      */
     @Override
     public Map<String, Object> processRequest(Map<String, Double> requestParams, Response response) {
-        //System.out.println("yo, wanna know the parameters given by the web browser? They are:");
-        //System.out.println(requestParams);
         Map<String, Object> results = new HashMap<>();
-        System.out.println("Since you haven't implemented RasterAPIHandler.processRequest, nothing is displayed in "
-                + "your browser.");
+
+        double queryWidth = requestParams.get("lrlon") - requestParams.get("ullon");
+        // Longitudinal distance per pixel (LonDPP) of query box
+        double LonDPPQuery = queryWidth / requestParams.get("w");
+
+        // Find the image depth, d7 is the sharpest image
+        int MaxDepth = 7;
+        int depth = 0;
+        for (int d = 0; d < MaxDepth; d++) {
+            double tempLonDPP = ((ROOT_LRLON - ROOT_ULLON) / Math.pow(2, d)) / TILE_SIZE;
+            if (tempLonDPP <= LonDPPQuery) {
+                depth = d;
+                break;
+            }
+        }
+        results.put("depth", depth);
+
+        // Update the query box four corners, corner case 1 is considered
+        double ul_lon = Math.max(ROOT_ULLON, requestParams.get("ullon"));
+        double ul_lat = Math.min(ROOT_ULLAT, requestParams.get("ullat"));
+        double lr_lon = Math.min(ROOT_LRLON, requestParams.get("lrlon"));
+        double lr_lat = Math.min(ROOT_LRLAT, requestParams.get("lrlat"));
+
+        // corner cases 2
+        if (lr_lon <= ul_lon || lr_lat >= ul_lat) {
+            return queryFail();
+        }
+
+
+
+
         return results;
     }
 
@@ -143,8 +169,7 @@ public class RasterAPIHandler extends APIRouteHandler<Map<String, Double>, Map<S
      * In Spring 2016, students had to do this on their own, but in 2017,
      * we made this into provided code since it was just a bit too low level.
      */
-    private  void writeImagesToOutputStream(Map<String, Object> rasteredImageParams,
-                                                  ByteArrayOutputStream os) {
+    private void writeImagesToOutputStream(Map<String, Object> rasteredImageParams, ByteArrayOutputStream os) {
         String[][] renderGrid = (String[][]) rasteredImageParams.get("render_grid");
         int numVertTiles = renderGrid.length;
         int numHorizTiles = renderGrid[0].length;
