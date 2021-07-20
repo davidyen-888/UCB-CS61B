@@ -85,14 +85,12 @@ public class RasterAPIHandler extends APIRouteHandler<Map<String, Double>, Map<S
     public Map<String, Object> processRequest(Map<String, Double> requestParams, Response response) {
         Map<String, Object> results = new HashMap<>();
 
-        double queryWidth = requestParams.get("lrlon") - requestParams.get("ullon");
         // Longitudinal distance per pixel (LonDPP) of query box
-        double LonDPPQuery = queryWidth / requestParams.get("w");
+        double LonDPPQuery = (requestParams.get("lrlon") - requestParams.get("ullon")) / requestParams.get("w");
 
         // Find the image depth, d7 is the sharpest image
-        int MaxDepth = 7;
-        int depth = 0;
-        for (int d = 0; d < MaxDepth; d++) {
+        int depth = 7;
+        for (int d = 0; d < 7; d++) {
             double tempLonDPP = ((ROOT_LRLON - ROOT_ULLON) / Math.pow(2, d)) / TILE_SIZE;
             if (tempLonDPP <= LonDPPQuery) {
                 depth = d;
@@ -105,17 +103,38 @@ public class RasterAPIHandler extends APIRouteHandler<Map<String, Double>, Map<S
         double ul_lon = Math.max(ROOT_ULLON, requestParams.get("ullon"));
         double ul_lat = Math.min(ROOT_ULLAT, requestParams.get("ullat"));
         double lr_lon = Math.min(ROOT_LRLON, requestParams.get("lrlon"));
-        double lr_lat = Math.min(ROOT_LRLAT, requestParams.get("lrlat"));
+        double lr_lat = Math.max(ROOT_LRLAT, requestParams.get("lrlat"));
 
         // corner cases 2
         if (lr_lon <= ul_lon || lr_lat >= ul_lat) {
             return queryFail();
         }
 
+        int numOfTile = (int) Math.pow(2, depth); // number of tiles in either column or row of the result image
+        double widthTile = (ROOT_LRLON - ROOT_ULLON) / numOfTile; // width of each tile in the result image
+        double heightTile = (ROOT_ULLAT - ROOT_LRLAT) / numOfTile; // height of each tile in the result image
 
+        // Rastering computation, locating the tiles that intersect the query box
+        int ulXaxis = (int) ((ul_lon - ROOT_ULLON) / widthTile);
+        int lrXaxis = numOfTile - 1 - (int) ((ROOT_LRLON - lr_lon) / widthTile);
+        int ulYaxis = (int) ((ROOT_ULLAT - ul_lat) / heightTile);
+        int lrYaxis = numOfTile - 1 - (int) ((lr_lat - ROOT_LRLAT) / heightTile);
+        results.put("raster_ul_lon", ROOT_ULLON + ulXaxis * widthTile);
+        results.put("raster_ul_lat", ROOT_ULLAT - ulYaxis * heightTile);
+        results.put("raster_lr_lon", ROOT_ULLON + (lrXaxis + 1) * widthTile);
+        results.put("raster_lr_lat", ROOT_ULLAT - (lrYaxis + 1) * heightTile);
 
-
+        // Construct the raster grid of images
+        String[][] grid = new String[lrYaxis - ulYaxis + 1][lrXaxis - ulXaxis + 1];
+        for (int i = ulYaxis; i <= lrYaxis; i++) {
+            for (int j = ulXaxis; j <= lrXaxis; j++) {
+                grid[i - ulYaxis][j - ulXaxis] = "d" + depth + "_x" + j + "_y" + i + ".png";
+            }
+        }
+        results.put("render_grid", grid);
+        results.put("query_success", true);
         return results;
+
     }
 
     @Override
