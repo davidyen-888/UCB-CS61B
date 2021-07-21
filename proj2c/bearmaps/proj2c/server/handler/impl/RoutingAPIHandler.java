@@ -58,8 +58,7 @@ public class RoutingAPIHandler extends APIRouteHandler<Map<String, Double>, Map<
      */
     @Override
     protected Map<String, Object> processRequest(Map<String, Double> requestParams, Response response) {
-        List<Long> route = Router.shortestPath(
-                SEMANTIC_STREET_GRAPH,
+        List<Long> route = Router.shortestPath(SEMANTIC_STREET_GRAPH,
                 requestParams.get("start_lon"), requestParams.get("start_lat"),
                 requestParams.get("end_lon"), requestParams.get("end_lat"));
         ROUTE_LIST.addAll(route);
