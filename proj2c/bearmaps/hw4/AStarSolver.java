@@ -14,7 +14,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
     private double solutionWeight;      // shortest path's total weight
     private int numStatesExplored;      // number of vertices visited
     private double timeSpent;     // total time to find the shortest path
-    private HashMap<Vertex, Double> disTo;  // current shortest distance to vertex
+    private HashMap<Vertex, Double> distTo;  // current shortest distance to vertex
     private HashMap<Vertex, Vertex> edgeTo; // a pair of (v1, v2) means v2 is pointed to v1
 
     /**
@@ -33,7 +33,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
         // Variable initialization
         fringe = new ArrayHeapMinPQ<>();
         numStatesExplored = 0;
-        disTo = new HashMap<>();
+        distTo = new HashMap<>();
         edgeTo = new HashMap<>();
         solution = new LinkedList<>();
         solutionWeight = 0;
@@ -41,7 +41,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
 
         // Insert the source vertex into the PQ.
         fringe.add(start, input.estimatedDistanceToGoal(start, end));
-        disTo.put(start, 0.0);
+        distTo.put(start, 0.0);
         edgeTo.put(start, null);
 
         // Repeat until the PQ is empty, PQ.getSmallest() is the goal, or timeout is exceeded:
@@ -53,7 +53,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
             // If goal is found, update the solution and stop.
             if (p.equals(end)) {
                 outcome = SolverOutcome.SOLVED;
-                solutionWeight = disTo(end);
+                solutionWeight = closestDist(end);
                 timeSpent = sw.elapsedTime();
                 solution = updateSolution(edgeTo, end);
                 return;
@@ -89,8 +89,8 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
     }
 
     /** Returns closest distance to the vertex, otherwise set as infinity. */
-    private double disTo(Vertex v) {
-        return disTo.getOrDefault(v, Double.MAX_VALUE);
+    private double closestDist(Vertex v) {
+        return distTo.getOrDefault(v, Double.MAX_VALUE);
     }
 
 
@@ -106,13 +106,13 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
         Vertex p = e.from();
         Vertex q = e.to();
         double w = e.weight();
-        if ((disTo(p) + w) < disTo(q)) {
-            disTo.put(q, disTo(p) + w);
+        if ((closestDist(p) + w) < closestDist(q)) {
+            distTo.put(q, closestDist(p) + w);
             edgeTo.put(q, p);
             if (fringe.contains(q)) {
-                fringe.changePriority(q, disTo(q) + graph.estimatedDistanceToGoal(q, end));
+                fringe.changePriority(q, closestDist(q) + graph.estimatedDistanceToGoal(q, end));
             } else {
-                fringe.add(q, disTo(q) + graph.estimatedDistanceToGoal(q, end));
+                fringe.add(q, closestDist(q) + graph.estimatedDistanceToGoal(q, end));
             }
         }
     }
