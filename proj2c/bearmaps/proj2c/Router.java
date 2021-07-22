@@ -2,6 +2,7 @@ package bearmaps.proj2c;
 
 import bearmaps.hw4.AStarSolver;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -9,7 +10,7 @@ import java.util.regex.Pattern;
 
 /**
  * This class acts as a helper for the RoutingAPIHandler.
- * @author Josh Hug, ______
+ * @author Josh Hug, David Hsieh
  */
 public class Router {
 
@@ -41,7 +42,59 @@ public class Router {
      */
     public static List<NavigationDirection> routeDirections(AugmentedStreetMapGraph g, List<Long> route) {
         /* fill in for part IV */
-        return null;
+        LinkedList<NavigationDirection> result = new LinkedList<>();
+
+        // No route condition
+        if (route.size() < 2) {
+            return null;
+        }
+
+        // Initialize first navigation direction
+        Long start = route.remove(0);
+        route.add(start);
+        Long curr = route.remove(0);
+        route.add(curr);
+        NavigationDirection init = navigationCreator(g, start, curr, 0);
+        result.add(init);
+
+        // Route with only start and end condition
+        if (route.size() < 3) {
+            return result;
+        }
+
+        // Rest nodes condition
+        for (int i = 0; i < route.size() - 2; i++) {
+            Long next = route.remove(0);
+            route.add(next);
+            String prevWay = result.getLast().way;
+            String currWay = g.edgeName(next, curr);
+            double prevBearing = NavigationDirection.bearing(g.lon(start), g.lon(curr), g.lat(start), g.lat(curr));
+            double currBearing = NavigationDirection.bearing(g.lon(curr), g.lon(next), g.lat(curr), g.lat(next));
+            int direction = NavigationDirection.getDirection(prevBearing, currBearing);
+
+            // If previous and current way name are same, add the distance to the list and continue. If happen to change
+            // ways to one without a name, it’s way should be set to the constant “unknown road”.
+            if ((currWay != null && currWay.equals(prevWay)) || currWay == null && Objects.equals(prevWay,
+                    NavigationDirection.UNKNOWN_ROAD)) {
+                result.getLast().distance += g.distance(curr, next);
+            } else {  // Different way name, create new navigation direction
+                NavigationDirection nav = navigationCreator(g, curr, next, direction);
+                result.add(nav);
+            }
+            start = curr;
+            curr = next;
+        }
+        return result;
+    }
+
+    private static NavigationDirection navigationCreator(AugmentedStreetMapGraph g, Long from, Long to, int direction) {
+        NavigationDirection nav = new NavigationDirection();
+        nav.distance = g.distance(from, to);
+        nav.direction = direction;
+        if (g.edgeName(from, to) != null) {
+            nav.way = g.edgeName(from, to);
+        }
+        return nav;
     }
 
     /**
@@ -197,8 +250,8 @@ public class Router {
         public boolean equals(Object o) {
             if (o instanceof NavigationDirection) {
                 return direction == ((NavigationDirection) o).direction
-                    && way.equals(((NavigationDirection) o).way)
-                    && distance == ((NavigationDirection) o).distance;
+                        && way.equals(((NavigationDirection) o).way)
+                        && distance == ((NavigationDirection) o).distance;
             }
             return false;
         }

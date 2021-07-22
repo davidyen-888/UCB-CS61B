@@ -1,5 +1,6 @@
 package bearmaps.proj2c;
 
+import bearmaps.hw4.WeightedEdge;
 import bearmaps.hw4.streetmap.Node;
 import bearmaps.hw4.streetmap.StreetMapGraph;
 import bearmaps.lab9.MyTrieSet;
@@ -129,4 +130,19 @@ public class AugmentedStreetMapGraph extends StreetMapGraph {
         return s.replaceAll("[^a-zA-Z ]", "").toLowerCase();
     }
 
+    /** For Part IV, returns the distance between two input node ids. */
+    public double distance(Long from, Long to) {
+        return distance(lon(from), lon(to), lat(from), lat(to));
+    }
+
+    /** For Part IV, returns the weighted edge name of provided two node ids. */
+    public String edgeName(Long from, Long to) {
+        List<WeightedEdge<Long>> neighbors = neighbors(from);
+        for (WeightedEdge we : neighbors) {
+            if (we.to().equals(to)) {
+                return we.getName();
+            }
+        }
+        return null;
+    }
 }
