@@ -1,7 +1,7 @@
 package bearmaps.hw4;
 
 import bearmaps.proj2ab.ArrayHeapMinPQ;
-import edu.princeton.cs.algs4.Stopwatch;
+//import edu.princeton.cs.algs4.Stopwatch;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -37,7 +37,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
         edgeTo = new HashMap<>();
         solution = new LinkedList<>();
         solutionWeight = 0;
-        Stopwatch sw = new Stopwatch();
+//        Stopwatch sw = new Stopwatch();
 
         // Insert the source vertex into the PQ.
         fringe.add(start, input.estimatedDistanceToGoal(start, end));
@@ -54,7 +54,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
             if (p.equals(end)) {
                 outcome = SolverOutcome.SOLVED;
                 solutionWeight = closestDist(end);
-                timeSpent = sw.elapsedTime();
+//                timeSpent = sw.elapsedTime();
                 solution = updateSolution(edgeTo, end);
                 return;
             }
@@ -62,7 +62,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
             else if (timeSpent > timeout) {
                 outcome = SolverOutcome.TIMEOUT;
                 solutionWeight = 0;
-                timeSpent = sw.elapsedTime();
+//                timeSpent = sw.elapsedTime();
                 return;
             }
             // Relax all edges outgoing from p.
@@ -75,7 +75,7 @@ public class AStarSolver<Vertex> implements ShortestPathsSolver<Vertex> {
         // Goal is not found.
         outcome = SolverOutcome.UNSOLVABLE;
         solutionWeight = 0;
-        timeSpent = sw.elapsedTime();
+//        timeSpent = sw.elapsedTime();
     }
 
     /** Return list of solution from HashMap edgeTo. */
